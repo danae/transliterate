@@ -50,7 +50,10 @@ export class LudiviMapping extends Mapping
 
     // Add implicit vowel (if abugida)
     if (typeof env.abugida !== "undefined")
-      tuples.push([new RegExp("(" + env.consonantPattern + ")" + env.abugida), match => env.consonants.valueFor(match[1])])
+    {
+      tuples.push([new RegExp("(" + env.consonantPattern + ")" + env.abugida), match => env.consonants.valueFor(match[1])]);
+      tuples.push([env.abugida, env.relat])
+    }
 
     // Create the mapping
     super(tuples,true,false);
