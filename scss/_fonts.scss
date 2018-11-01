@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'Kylena Book';
+  font-style: normal;
+  font-weight: 400;
+  unicode-range: U+E190-E1BF;
+  src: url("../fonts/Kylena Book.otf") format("opentype"),
+       url("../fonts/Kylena Book.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Syrrin Book';
+  font-style: normal;
+  font-weight: 400;
+  unicode-range: U+E1C0-E1FF;
+  src: url("../fonts/Syrrin Book.otf") format("opentype"),
+       url("../fonts/Syrrin Book.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Daedian Book';
+  font-style: normal;
+  font-weight: 400;
+  unicode-range: U+E200-E24F;
+  src: url("../fonts/Daedian Book.otf") format("opentype"),
+       url("../fonts/Daedian Book.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Syhh Ttipp Book';
+  font-style: normal;
+  font-weight: 400;
+  unicode-range: U+E320-E34F;
+  src: url("../fonts/Syhh Ttipp Book.otf") format("opentype"),
+       url("../fonts/Syhh Ttipp Book.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Geopoeia';
+  font-style: normal;
+  font-weight: 400;
+  unicode-range: U+E250-E3DF;
+  src: url("../fonts/Geopoeia.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Garahcode';
+  font-style: normal;
+  font-weight: 400;
+  unicode-range: U+F1000-F104F;
+  src: url("../fonts/Garahcode.otf") format("opentype"),
+       url("../fonts/Garahcode.woff") format("woff");
+}
+
+$font-scripts: 'Kylena Book', 'Syrrin Book', 'Daedian Book', 'Syhh Ttipp Book', 'Geopoeia', 'Garahcode';

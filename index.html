@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>trans&middot;'li&middot;te&middot;rate</title>
+  </head>
+
+  <body>
+    <main class="container">
+      <h2><b>trans&middot;'li&middot;te&middot;rate</b> to represent letters or words in the characters of another writing system</h2>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <div class="dropdown select" id="fromScript">
+              <span class="btn btn-sm btn-light">Latijns</span>
+              <div class="dropdown-menu"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <textarea class="form-control" id="from" rows="5"></textarea>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="form-group form-inline">
+            <div class="dropdown select mr-2" id="toScript">
+              <button class="btn btn-light btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"></button>
+              <div class="dropdown-menu"></div>
+            </div>
+
+            <div class="dropdown select mr-2" id="template">
+              <button class="btn btn-light btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"></button>
+              <div class="dropdown-menu"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <textarea class="form-control" id="to" rows="5" readonly></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div id="charmap" class="mb-3"></div>
+    </main>
+
+    <footer class="container text-center text-muted" style="font-size: smaller;">
+      Gemaakt en gehost door <a class="text-dark" href="https://github.com/dengsn/"><b>dengsn</b></a><br>
+      Transliterate maakt gebruik van cookies om ingestelde voorkeuren op te slaan
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script type="module" src="js/index.js"></script>
+  </body>
+</html>

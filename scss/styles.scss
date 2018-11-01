@@ -1,0 +1,31 @@
+@import 'variables';
+@import 'fonts';
+
+body {
+  padding: 20px 0px;
+}
+
+body, input, select, textarea {
+  font-family: $font-scripts, $font-text;
+}
+h1, h2 {
+  font-family: $font-heading;
+  margin-bottom: 1em;
+}
+textarea#from, textarea#to, button.charmap-btn {
+  font-family: $font-scripts, $font-form;
+}
+textarea#from, textarea#to {
+  font-size: large;
+}
+
+.container {
+  max-width: 960px;
+}
+
+.form-group {
+  margin-bottom: 0.5rem;
+}
+.form-control[readonly] {
+  background-color: #FFFFFF;
+}

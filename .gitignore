@@ -1,0 +1,5 @@
+# Ignore precompiled SASS
+/css/
+
+# Ignore SASS cache
+/.sass-cache/
