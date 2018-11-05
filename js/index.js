@@ -62,7 +62,7 @@ let initModeDropdown = function(modes)
 
       let option = document.createElement('button');
       $(option).addClass('dropdown-item btn-sm');
-      $(option).attr('data-value',id);
+      $(option).attr('data-value', id);
       $(option).text(mode.name);
       $('#toScript .dropdown-menu').append(option);
     }
@@ -106,7 +106,7 @@ let initTemplateDropdown = function(templates)
 
       let option = document.createElement('button');
       $(option).addClass('dropdown-item btn-sm');
-      $(option).attr('data-value',id);
+      $(option).attr('data-value', id);
       $(option).text(template.name);
       $('#template .dropdown-menu').append(option);
     }
@@ -129,7 +129,7 @@ $(function()
   // Dropdown menu acting as select
   $('.dropdown .dropdown-item').click(function() {
     let dropdown = $(this).parents('.dropdown');
-    dropdown.trigger('change',[dropdown.get(0),this,true]);
+    dropdown.trigger('change', [dropdown.get(0), this, true]);
   });
 
   // If the dropdown menu changes
@@ -141,7 +141,7 @@ $(function()
       prefix = "";
 
     let value = $(selectedElm).attr('data-value');
-    $(dropdownElm).attr('data-value',value);
+    $(dropdownElm).attr('data-value', value);
     $(dropdownElm).find('.dropdown-toggle').html(prefix + $(selectedElm).text());
 
     // Trigger the transliteration
@@ -156,15 +156,16 @@ $(function()
     let toMode = modes[toScript];
 
     // Set a cookie with the last selected toScript
-    Cookies.set('transliterate.toScript',toScript);
+    Cookies.set('transliterate.toScript', toScript, {expires: 90});
 
     // Change the charmap
     let charmapElm = $('#charmap');
     charmapElm.html('');
-    toMode.charmap.render(charmapElm);
+    if (typeof toMode.charmap !== "undefined")
+      toMode.charmap.render(charmapElm);
 
     // Change the RTL mode
-    if (toMode.mapping.rightToLeft)
+    if (toMode.transliteration.rightToLeft)
       $('#to').addClass("text-right");
     else
       $('#to').removeClass("text-right");
@@ -177,13 +178,13 @@ $(function()
     template = templates[templateValue];
 
     // Set a cookie with the last selected template
-    Cookies.set('transliterate.template',templateValue);
+    Cookies.set('transliterate.template', templateValue, {expires: 90});
 
     $('#from').trigger('change');
   });
 
   // If the text of the from-textarea changes
-  $('#from').on('change input propertychange',function()
+  $('#from').on('change input propertychange', function()
   {
     // Get from and to modes
     let toScript = $('#toScript').attr('data-value');
@@ -193,12 +194,12 @@ $(function()
     let fromText = $('#from').val();
 
     // Convert
-    let toText = toMode.map(fromText,template);
+    let toText = toMode.transliteration.transliterate(fromText, template);
     $('#to').val(toText);
   });
 
   // If the to-textarea is focused
-  $('#to').on('focus',function()
+  $('#to').on('focus', function()
   {
     $(this).select();
   });
@@ -206,12 +207,12 @@ $(function()
   // Set the default values
   let defaultToScript = Cookies.get('transliterate.toScript');
   if (typeof defaultToScript === 'undefined' || !modes.hasOwnProperty(defaultToScript))
-    defaultToScript = 'daedian';
+    defaultToScript = 'daedian_standard';
 
-    let defaultTemplate = Cookies.get('transliterate.template');
-    if (typeof defaultTemplate === 'undefined' || !templates.hasOwnProperty(defaultTemplate))
-      defaultTemplate = 'none';
+  let defaultTemplate = Cookies.get('transliterate.template');
+  if (typeof defaultTemplate === 'undefined' || !templates.hasOwnProperty(defaultTemplate))
+    defaultTemplate = 'none';
 
-  $('#toScript').trigger('change',[$('#toScript'),$('#toScript .dropdown-item[data-value="' + defaultToScript + '"]').get(0),false]);
-  $('#template').trigger('change',[$('#template'),$('#template .dropdown-item[data-value="' + defaultTemplate + '"]').get(0),false]);
+  $('#toScript').trigger('change', [$('#toScript'),$('#toScript .dropdown-item[data-value="' + defaultToScript + '"]').get(0), false]);
+  $('#template').trigger('change', [$('#template'),$('#template .dropdown-item[data-value="' + defaultTemplate + '"]').get(0), false]);
 });

@@ -1,4 +1,4 @@
-// TUple array class
+// Tuple array class
 export class TupleArray extends Array
 {
   // Constructor
@@ -23,6 +23,12 @@ export class TupleArray extends Array
       if (tuple[1] === value)
         return tuple[0];
     return null;
+  }
+
+  // Create a tuple array from an array
+  static fromArray(array)
+  {
+    return new TupleArray(...array);
   }
 }
 
@@ -50,14 +56,23 @@ export class Charmap
       {
         let button = document.createElement("button");
         $(button).addClass("btn btn-sm btn-dark charmap-btn");
-        $(button).css("width","2rem");
+        $(button).css("width","2.25rem");
         $(button).css("margin","0.25rem");
         $(button).text(char);
         $(button).on('click',function()
         {
-          $('#from').val($('#from').val() + $(this).text());
+          var selStart = $('#from').prop('selectionStart');
+          var selEnd = $('#from').prop('selectionEnd');
+          var v = $('#from').val();
+          var ins = $(this).text();
+          var textBefore = v.substring(0, selStart);
+          var textAfter  = v.substring(selEnd, v.length);
+          $('#from').val(textBefore + ins + textAfter);
+
           $('#from').trigger('input');
           $('#from').focus();
+          $('#from').prop('selectionStart', selStart + ins.length);
+          $('#from').prop('selectionEnd', selStart + ins.length);
         });
 
         elm.append(button);
@@ -66,46 +81,63 @@ export class Charmap
   }
 }
 
-// Mapping class
-export class Mapping
+// Template class
+export class Template
+{
+  // Constructor
+  constructor(env)
+  {
+    for (let key in env)
+    {
+      if (!env.hasOwnProperty(key))
+        continue;
+      this[key] = env[key];
+    }
+  }
+
+  // Apply the template
+  apply(string, transliteration)
+  {
+    return this.func(string,transliteration);
+  }
+}
+
+// Transliteration class
+export class Transliteration
 {
   // Constructor
   constructor(tuples, caseInsensitive = true, rightToLeft = false)
   {
-    if (typeof tuples === "function")
-      this.tuples = tuples();
-
     if (!(tuples instanceof TupleArray))
-      this.tuples = new TupleArray(...tuples);
-    else
-      this.tuples = tuples;
+      tuples = TupleArray.fromArray(tuples);
 
+    this.tuples = tuples;
     this.caseInsensitive = caseInsensitive;
     this.rightToLeft = rightToLeft;
   }
 
-  // Extend the mapping
-  extend(mapping)
+  // Extend the transliteration
+  extend(transliteration)
   {
     let tuples = new TupleArray();
-    for (let tuple of mapping.tuples)
+    for (let tuple of transliteration.tuples)
       tuples.push(tuple);
     for (let tuple of this.tuples)
       tuples.push(tuple);
-    return new Mapping(tuples,this.caseInsensitive);
+    return new Transliteration(tuples, this.caseInsensitive, this.rightToLeft);
   }
 
-  // Reverse the mapping
+  // Reverse the transliteration
   reverse()
   {
     let tuples = new TupleArray();
     for (let tuple of this.tuples)
       tuples.push(tuple.reverse());
-    return new Mapping(tuples,this.caseInsensitive);
+    return new Transliteration(tuples, this.caseInsensitive, this.rightToLeft);
   }
 
-  // Mapping function
-  map(string)
+  // Transliterate function
+  transliterate(string, template)
   {
     let mappedString = "";
 
@@ -221,7 +253,7 @@ export class Mapping
       mappedString = Mapping.reverseString(mappedString);
 
     // Return the mapped string
-    return mappedString;
+    return typeof(template) !== 'undefined' ? template.apply(mappedString, this) : mappedString;
   }
 
   // Reverse a string
@@ -232,48 +264,5 @@ export class Mapping
     for (let line of lines)
       reversedLines.push(line.split("").reverse().join(""));
     return reversedLines.join("\n");
-  }
-}
-
-// Transliteration class
-export class Transliteration
-{
-  // Constructor
-  constructor(env)
-  {
-    for (let key in env)
-    {
-      if (!env.hasOwnProperty(key))
-        continue;
-      this[key] = env[key];
-    }
-  }
-
-  // Map function
-  map(string, template)
-  {
-    string = this.mapping.map(string);
-    return typeof(template) !== 'undefined' ? template.apply(string,this) : string;
-  }
-}
-
-// Template class
-export class Template
-{
-  // Constructor
-  constructor(env)
-  {
-    for (let key in env)
-    {
-      if (!env.hasOwnProperty(key))
-        continue;
-      this[key] = env[key];
-    }
-  }
-
-  // Apply the template
-  apply(string, transliteration)
-  {
-    return this.func(string,transliteration);
   }
 }
