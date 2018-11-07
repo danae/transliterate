@@ -1,3 +1,9 @@
+// RegExp escape function
+export function escape(s)
+{
+  return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+};
+
 // Tuple array class
 export class TupleArray extends Array
 {
@@ -172,7 +178,7 @@ export class Transliteration
               localReplacement = localReplacement(match);
 
             // Add to the found tuples
-            foundTuples.push([pattern, localReplacement, match.index, match[0].length])
+            foundTuples.push([pattern, localReplacement, match.index, match[0].length, match[0]])
           }
         }
 

@@ -1,4 +1,4 @@
-import {TupleArray, Charmap, Transliteration} from '../../transliterate.js';
+import {TupleArray, Charmap, Transliteration, escape} from '../../transliterate.js';
 
 class LudiviTransliteration extends Transliteration
 {
@@ -28,8 +28,9 @@ class LudiviTransliteration extends Transliteration
     });
 
     // Create patterns
-    env.consonantPattern = env.consonants.map(tuple => tuple[0]).join("|");
-    env.vowelPattern = env.vowels.map(tuple => tuple[0]).join("|");
+    env.punctuationPattern = env.punctuation.map(tuple => escape(tuple[0])).join("|") + "|\\s+";
+    env.consonantPattern = env.consonants.map(tuple => escape(tuple[0])).join("|");
+    env.vowelPattern = env.vowels.map(tuple => escape(tuple[0])).join("|");
     env.relat = "\u{F1001}";
     env.phujat = "\u{F102B}";
 
@@ -147,8 +148,8 @@ let imirtaane = {
   })
 };
 
-let naoric = {
-  name: "Naorisch",
+let naori = {
+  name: "Naori",
   charmap: new Charmap([
     "á", "ḍ", "é", "ġ", "ḥ", "í", "ḳ", "ḷ",
     "ṅ", "ó", "ṗ", "ṙ", "ṡ", "ṭ", "ú", "ż",
@@ -173,6 +174,18 @@ let naoric = {
       ["a", "\u{F1020}"], ["á", "\u{F1021}"], ["e", "\u{F1022}"], ["é", "\u{F1023}"],
       ["i", "\u{F1024}"], ["í", "\u{F1025}"], ["o", "\u{F1027}"], ["ó", "\u{F1028}"],
       ["u", "\u{F1029}"], ["ú", "\u{F102A}"]
+    ],
+    rules: [
+      // at > ḥa at end of words
+      env => [new RegExp("(" + env.consonantPattern + ")(?:at(?=" + env.punctuationPattern + ")|at$)"), match => env.consonants.valueFor(match[1]) + "\u{F1012}\u{F1020}"],
+
+      // Interved articles
+      env => ['an-', "\u{F1002}\u{F1020}\u{F1042}"], env => ['aṙ-', "\u{F1003}\u{F1020}\u{F1042}"],
+      env => ['as-', "\u{F1004}\u{F1020}\u{F1042}"], env => ['az-', "\u{F1005}\u{F1020}\u{F1042}"],
+      env => ['al-', "\u{F1006}\u{F1020}\u{F1042}"], env => ['ar-', "\u{F1007}\u{F1020}\u{F1042}"],
+      env => ['aṗ-', "\u{F1018}\u{F1020}\u{F1042}"], env => ['af-', "\u{F1018}\u{F1020}\u{F1042}"],
+      env => ['aṅ-', "\u{F101B}\u{F1020}\u{F1042}"], env => ['aṡ-', "\u{F101D}\u{F1020}\u{F1042}"],
+      env => ['aż-', "\u{F101F}\u{F1020}\u{F1042}"],
     ]
   })
 };
@@ -208,7 +221,7 @@ export default {
     standard: standard,
     nirinvi: nirinvi,
     imirtaane: imirtaane,
-    naoric: naoric,
+    naori: naori,
     garaman: garaman
   }
 };
