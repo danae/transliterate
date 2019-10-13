@@ -1,8 +1,9 @@
-import {Charmap, Transliteration} from '../../transliterate.js';
+import {Charmap, Transliteration} from '../transliterate.js';
 
 export default {
+  id: 'cylenian',
   name: "Cyleens",
-  category: "Cylenië",
+  category: "Atlantis",
   font: "'Kylena Book', Geopoeia",
   charmap: new Charmap([
     "ð", "þ"

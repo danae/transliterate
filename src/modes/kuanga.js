@@ -1,6 +1,7 @@
-import {Charmap, Transliteration} from '../../transliterate.js';
+import {Charmap, Transliteration} from '../transliterate.js';
 
 export default {
+  id: 'kuanga',
   name: "Kuanga",
   category: "Taratai",
   font: "Geopoeia",

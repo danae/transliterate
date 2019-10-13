@@ -1,8 +1,9 @@
-import {Charmap, Transliteration} from '../../transliterate.js';
+import {Charmap, Transliteration} from '../transliterate.js';
 
 export default {
+  id: 'syrrin',
   name: "Syrrin",
-  category: "Cylenië",
+  category: "Atlantis",
   font: "'Syrrin Book', Geopoeia",
   charmap: new Charmap([
     "ā", "æ", "ǣ", "ē", "ī", "ō", "w̄"

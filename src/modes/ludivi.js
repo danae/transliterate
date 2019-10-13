@@ -1,4 +1,4 @@
-import {TupleArray, Charmap, Transliteration, escape} from '../../transliterate.js';
+import {TupleArray, Charmap, Transliteration, escape} from '../transliterate.js';
 
 class LudiviTransliteration extends Transliteration
 {
@@ -29,6 +29,7 @@ class LudiviTransliteration extends Transliteration
 
     // Create patterns
     env.punctuationPattern = env.punctuation.map(tuple => escape(tuple[0])).join("|") + "|\\s+";
+    env.numeralPattern = env.numerals.map(tuple => escape(tuple[0])).join("|");
     env.consonantPattern = env.consonants.map(tuple => escape(tuple[0])).join("|");
     env.vowelPattern = env.vowels.map(tuple => escape(tuple[0])).join("|");
     env.relat = "\u{F1001}";
@@ -44,6 +45,10 @@ class LudiviTransliteration extends Transliteration
 
     // Add punctuation
     for (let tuple of env.punctuation)
+      tuples.push(tuple);
+
+    // Add numerals
+    for (let tuple of env.numerals)
       tuples.push(tuple);
 
     // Add all consonants (with phujat if abugida)
@@ -70,6 +75,7 @@ class LudiviTransliteration extends Transliteration
 };
 
 let standard = {
+  id: 'ludivi_standard',
   name: "Standaard",
   charmap: new Charmap([
     "á", "é", "í", "ó", "ú", "ə", "„", "¡", "¿"
@@ -79,6 +85,11 @@ let standard = {
       [".", "\u{F1040}"], [",", "\u{F1041}"], ["-", "\u{F1042}"], ["\"", "\u{F1043}"],
       ["„", "\u{F1044}"], ["!", "\u{F1045}"], ["¡", "\u{F1046}"], ["?", "\u{F1047}"],
       ["¿", "\u{F1048}"]
+    ],
+    numerals: [
+      ["0", "\u{F1050}"], ["1", "\u{F1051}"], ["2", "\u{F1052}"], ["3", "\u{F1053}"],
+      ["4", "\u{F1054}"], ["5", "\u{F1055}"], ["6", "\u{F1056}"], ["7", "\u{F1057}"],
+      ["8", "\u{F1058}"], ["9", "\u{F1059}"], ["x", "\u{F105A}"], ["c", "\u{F105B}"]
     ],
     consonants: [
       ["n", "\u{F1002}"], ["rt", "\u{F1003}"], ["s", "\u{F1004}"], ["z", "\u{F1005}"],
@@ -100,6 +111,7 @@ let standard = {
 };
 
 let nirinvi = {
+  id: 'ludivi_nirinvi',
   name: "Nirinvi",
   charmap: new Charmap(["ë", "„", "¡", "¿"]),
   transliteration: new LudiviTransliteration({
@@ -107,6 +119,11 @@ let nirinvi = {
       [".", "\u{F1040}"], [",", "\u{F1041}"], ["-", "\u{F1042}"], ["\"", "\u{F1043}"],
       ["„", "\u{F1044}"], ["!", "\u{F1045}"], ["¡", "\u{F1046}"], ["?", "\u{F1047}"],
       ["¿", "\u{F1048}"]
+    ],
+    numerals: [
+      ["0", "\u{F1050}"], ["1", "\u{F1051}"], ["2", "\u{F1052}"], ["3", "\u{F1053}"],
+      ["4", "\u{F1054}"], ["5", "\u{F1055}"], ["6", "\u{F1056}"], ["7", "\u{F1057}"],
+      ["8", "\u{F1058}"], ["9", "\u{F1059}"], ["x", "\u{F105A}"], ["c", "\u{F105B}"]
     ],
     consonants: [
       ["n", "\u{F1002}"], ["s", "\u{F1004}"], ["l", "\u{F1006}"], ["r", "\u{F1007}"],
@@ -124,6 +141,7 @@ let nirinvi = {
 };
 
 let imirtaane = {
+  id: 'ludivi_imirtaane',
   name: "Imirtaane",
   charmap: new Charmap(["„", "¡", "¿"]),
   transliteration: new LudiviTransliteration({
@@ -131,6 +149,11 @@ let imirtaane = {
       [".", "\u{F1040}"], [",", "\u{F1041}"], ["-", "\u{F1042}"], ["\"", "\u{F1043}"],
       ["„", "\u{F1044}"], ["!", "\u{F1045}"], ["¡", "\u{F1046}"], ["?", "\u{F1047}"],
       ["¿", "\u{F1048}"]
+    ],
+    numerals: [
+      ["0", "\u{F1050}"], ["1", "\u{F1051}"], ["2", "\u{F1052}"], ["3", "\u{F1053}"],
+      ["4", "\u{F1054}"], ["5", "\u{F1055}"], ["6", "\u{F1056}"], ["7", "\u{F1057}"],
+      ["8", "\u{F1058}"], ["9", "\u{F1059}"], ["x", "\u{F105A}"], ["c", "\u{F105B}"]
     ],
     consonants: [
       ["n", "\u{F1002}"], ["rt", "\u{F1003}"], ["s", "\u{F1004}"], ["z", "\u{F1005}"],
@@ -149,6 +172,7 @@ let imirtaane = {
 };
 
 let naori = {
+  id: 'ludivi_naori',
   name: "Naori",
   charmap: new Charmap([
     "á", "ḍ", "é", "ġ", "ḥ", "í", "ḳ", "ḷ",
@@ -161,6 +185,11 @@ let naori = {
       ["„", "\u{F1044}"], ["!", "\u{F1045}"], ["¡", "\u{F1046}"], ["?", "\u{F1047}"],
       ["¿", "\u{F1048}"]
     ],
+    numerals: [
+      ["0", "\u{F1050}"], ["1", "\u{F1051}"], ["2", "\u{F1052}"], ["3", "\u{F1053}"],
+      ["4", "\u{F1054}"], ["5", "\u{F1055}"], ["6", "\u{F1056}"], ["7", "\u{F1057}"],
+      ["8", "\u{F1058}"], ["9", "\u{F1059}"], ["x", "\u{F105A}"], ["c", "\u{F105B}"]
+    ],
     consonants: [
       ["n", "\u{F1002}"], ["ṙ", "\u{F1003}"], ["s", "\u{F1004}"], ["z", "\u{F1005}"],
       ["l", "\u{F1006}"], ["r", "\u{F1007}"], ["t", "\u{F1008}"], ["ṭ", "\u{F1009}"],
@@ -168,7 +197,7 @@ let naori = {
       ["k", "\u{F100F}"], ["ġ", "\u{F1010}"], ["g", "\u{F1011}"], ["ḥ", "\u{F1012}"],
       ["'", "\u{F1013}"], ["h", "\u{F1014}"], ["m", "\u{F1015}"], ["ṗ", "\u{F1016}"],
       ["p", "\u{F1017}"], ["f", "\u{F1018}"], ["b", "\u{F1019}"], ["v", "\u{F101A}"],
-      ["ṅ", "\u{F101B}"], ["ṡ", "\u{F101D}"], ["ḳ", "\u{F101E}"], ["ż", "\u{F101F}"]
+      ["ṅ", "\u{F101B}"], ["ṡ", "\u{F101D}"], ["q", "\u{F101E}"], ["ż", "\u{F101F}"]
     ],
     vowels: [
       ["a", "\u{F1020}"], ["á", "\u{F1021}"], ["e", "\u{F1022}"], ["é", "\u{F1023}"],
@@ -179,7 +208,7 @@ let naori = {
       // at > ḥa at end of words
       env => [new RegExp("(" + env.consonantPattern + ")(?:at(?=" + env.punctuationPattern + ")|at$)"), match => env.consonants.valueFor(match[1]) + "\u{F1012}\u{F1020}"],
 
-      // Interved articles
+      // Inverted articles
       env => ['an-', "\u{F1002}\u{F1020}\u{F1042}"], env => ['aṙ-', "\u{F1003}\u{F1020}\u{F1042}"],
       env => ['as-', "\u{F1004}\u{F1020}\u{F1042}"], env => ['az-', "\u{F1005}\u{F1020}\u{F1042}"],
       env => ['al-', "\u{F1006}\u{F1020}\u{F1042}"], env => ['ar-', "\u{F1007}\u{F1020}\u{F1042}"],
@@ -191,6 +220,7 @@ let naori = {
 };
 
 let garaman = {
+  id: 'ludivi_garaman',
   name: "Garaman",
   charmap: new Charmap(["à", "è", "ó", "„", "¡", "¿"]),
   transliteration: new LudiviTransliteration({
@@ -198,6 +228,11 @@ let garaman = {
       [".", "\u{F1040}"], [",", "\u{F1041}"], ["-", "\u{F1042}"], ["\"", "\u{F1043}"],
       ["„", "\u{F1044}"], ["!", "\u{F1045}"], ["¡", "\u{F1046}"], ["?", "\u{F1047}"],
       ["¿", "\u{F1048}"]
+    ],
+    numerals: [
+      ["0", "\u{F1050}"], ["1", "\u{F1051}"], ["2", "\u{F1052}"], ["3", "\u{F1053}"],
+      ["4", "\u{F1054}"], ["5", "\u{F1055}"], ["6", "\u{F1056}"], ["7", "\u{F1057}"],
+      ["8", "\u{F1058}"], ["9", "\u{F1059}"], ["x", "\u{F105A}"], ["c", "\u{F105B}"]
     ],
     consonants: [
       ["n", "\u{F1002}"], ["r", "\u{F1003}"], ["s", "\u{F1004}"], ["z", "\u{F1005}"],
@@ -217,11 +252,5 @@ export default {
   name: "Ludivi",
   category: "Garah",
   font: "Garahcode",
-  transliterations: {
-    standard: standard,
-    nirinvi: nirinvi,
-    imirtaane: imirtaane,
-    naori: naori,
-    garaman: garaman
-  }
+  transliterations: [standard, nirinvi, imirtaane, naori, garaman]
 };

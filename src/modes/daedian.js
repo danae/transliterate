@@ -1,6 +1,7 @@
-import {Charmap, Transliteration} from '../../transliterate.js';
+import {Charmap, Transliteration} from '../transliterate.js';
 
 let standard = {
+  id: 'daedian_standard',
   name: "Standaard",
   charmap: new Charmap([
     "ā", "ã", "ą", "ä", "ē", "ẽ", "ę", "ī",
@@ -47,6 +48,7 @@ let standard = {
 };
 
 let cila = {
+  id: 'daedian_cila',
   name: "Cila",
   charmap: standard.charmap,
   transliteration: standard.transliteration.extend(new Transliteration([
@@ -59,11 +61,9 @@ let cila = {
 };
 
 export default {
+  id: 'daedian',
   name: "Daedisch",
   category: "Taratai",
   font: "'Daedian Book', Geopoeia",
-  transliterations: {
-    standard: standard,
-    cila: cila
-  }
+  transliterations: [standard, cila]
 };

@@ -102,9 +102,9 @@ export class Template
   }
 
   // Apply the template
-  apply(string, transliteration)
+  apply(string, transliteration, mode)
   {
-    return this.func(string,transliteration);
+    return this.func(string, transliteration, mode);
   }
 }
 
@@ -143,7 +143,7 @@ export class Transliteration
   }
 
   // Transliterate function
-  transliterate(string, template)
+  transliterate(string, template, mode)
   {
     let mappedString = "";
 
@@ -252,14 +252,12 @@ export class Transliteration
       }
     }
 
-    console.log(appliedTuples);
-
     // RTL mode
     if (this.rightToLeft)
-      mappedString = Mapping.reverseString(mappedString);
+      mappedString = Transliteration.reverseString(mappedString);
 
     // Return the mapped string
-    return typeof(template) !== 'undefined' ? template.apply(mappedString, this) : mappedString;
+    return typeof(template) !== 'undefined' ? template.apply(mappedString, this, mode) : mappedString;
   }
 
   // Reverse a string

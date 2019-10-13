@@ -1,22 +1,25 @@
 @import 'variables';
 @import 'fonts';
 
-body {
-  padding: 20px 0px;
-}
-
 body, input, select, textarea {
   font-family: $font-scripts, $font-text;
 }
-h1, h2 {
+h1, h2, .navbar-brand {
   font-family: $font-heading;
-  margin-bottom: 1em;
 }
 textarea#from, textarea#to, button.charmap-btn {
   font-family: $font-scripts, $font-form;
 }
 textarea#from, textarea#to, .charmap-btn {
   font-size: large;
+}
+
+.navbar {
+  border-bottom: 2px $color-accent dotted;
+
+  .navbar-brand {
+    color: $color-accent;
+  }
 }
 
 .container {

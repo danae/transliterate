@@ -1,6 +1,7 @@
-import {Charmap, Transliteration} from '../../transliterate.js';
+import {Charmap, Transliteration} from '../transliterate.js';
 
 export default {
+  id: 'syhhttipp',
   name: "Syhh Ttipp",
   category: "Taratai",
   font: "'Syhh Ttipp Book', Geopoeia",

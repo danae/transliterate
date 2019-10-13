@@ -3,42 +3,34 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <title>trans&middot;'li&middot;te&middot;rate</title>
+    <title>Transliterate</title>
   </head>
 
   <body>
-    <main class="container">
-      <h2><b>trans&middot;'li&middot;te&middot;rate</b> to represent letters or words in the characters of another writing system</h2>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <span class="navbar-brand mb-0 h1">
+          <i class="fas fa-fw fa-feather-alt"></i> trans·'li·te·rate
+        </span>
+      </div>
+    </nav>
+
+    <main class="container mt-3">
+      <div class="input-group mb-3">
+        <select id="script" class="mr-2" data-prefix="<i class=&quot;fas fa-fw fa-pencil-alt&quot;></i> " data-button-class="btn-outline-dark" data-item-class="btn-sm"></select>
+        <select id="template" class="mr-2" data-prefix="<i class=&quot;fas fa-fw fa-scroll&quot;></i> " data-button-class="btn-outline-dark" data-item-class="btn-sm"></select>
+      </div>
 
       <div class="row">
         <div class="col-sm-6">
-          <div class="form-group">
-            <div class="dropdown select" id="fromScript">
-              <span class="btn btn-sm btn-light">Latijns</span>
-              <div class="dropdown-menu"></div>
-            </div>
-          </div>
-
           <div class="form-group">
             <textarea class="form-control" id="from" rows="5"></textarea>
           </div>
         </div>
 
         <div class="col-sm-6">
-          <div class="form-group form-inline">
-            <div class="dropdown select mr-2" id="toScript">
-              <button class="btn btn-light btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"></button>
-              <div class="dropdown-menu"></div>
-            </div>
-
-            <div class="dropdown select mr-2" id="template">
-              <button class="btn btn-light btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"></button>
-              <div class="dropdown-menu"></div>
-            </div>
-          </div>
-
           <div class="form-group">
             <textarea class="form-control" id="to" rows="5" readonly></textarea>
           </div>
@@ -49,23 +41,15 @@
     </main>
 
     <footer class="container text-center text-muted" style="font-size: smaller;">
-      Gemaakt en gehost door <a class="text-dark" href="https://github.com/dengsn/transliterate"><b>dengsn</b></a><br>
+      Gemaakt en gehost door <a class="text-dark" href="https://github.com/danae/transliterate">danae.dev</a><br>
       Transliterate maakt gebruik van cookies om ingestelde voorkeuren op te slaan
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-    <script type="module" src="js/index.js"></script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119873369-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-119873369-2');
-    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/81dd8870b4.js" crossorigin="anonymous"></script>
+    <script type="module" src="src/index.js"></script>
   </body>
 </html>
