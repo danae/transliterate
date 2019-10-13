@@ -9,11 +9,17 @@ let initModeDropdown = function(elmSelector, modes)
 {
   let elm = $(elmSelector);
 
-  Object.keys(modes).sort().forEach(function(modeId) {
-    let mode = modes[modeId];
+  modes.sort(function(a, b) {
+    if (a.name < b.name)
+      return -1;
+    else if (a.name > b.name)
+      return 1;
+    else
+      return 0;
+  }).forEach(function(mode) {
     $('<option>')
       .appendTo(elm)
-      .val(modeId)
+      .val(mode.id)
       .html(mode.name);
   });
 };
@@ -53,7 +59,7 @@ $(function()
   // If the script dropdown chages
   $('#script').change(function(e, value)
   {
-    let toMode = modes[value];
+    let toMode = modes.find(mode => mode.id === value);
 
     // Set a cookie with the last selected script
     Cookies.set('transliterate.script', value, {expires: 90});
@@ -91,7 +97,7 @@ $(function()
   {
     // Get from and to modes
     let script = $('#script').attr('data-value');
-    let toMode = modes[script];
+    let toMode = modes.find(mode => mode.id === script);
 
     // Get the source text
     let fromText = $('#from').val();

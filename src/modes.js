@@ -21,26 +21,25 @@ let modes = [
   ulughese
 ];
 
-let normalizedModes = {};
-for (let m in modes)
+let normalizedModes = [];
+for (let mode of modes)
 {
-  let mode = modes[m];
   if (typeof mode.transliterations !== "undefined")
   {
-    for (let t in mode.transliterations)
+    for (let transliteration of mode.transliterations)
     {
-      let transliteration = mode.transliterations[t];
-      normalizedModes[m + '_' + t] = {
+      normalizedModes.push({
+        id: transliteration.id,
         name: mode.name + ' (' + transliteration.name + ')',
         category: mode.category,
         font: mode.font,
         charmap: transliteration.charmap,
         transliteration: transliteration.transliteration
-      };
+      });
     }
   }
   else
-    normalizedModes[m] = mode;
+    normalizedModes.push(mode);
 }
 
 export default normalizedModes;
