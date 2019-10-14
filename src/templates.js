@@ -1,4 +1,4 @@
-import {Template} from './transliterate.js'
+import Template from './template.js'
 
 var templates = {};
 

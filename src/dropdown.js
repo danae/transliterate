@@ -1,5 +1,5 @@
 // Create a Bootstrap dropdown from a select
-$.fn.dropdownSelect = function(selectedValue)
+$.fn.dropdownSelect = function(itemsToPopulate, selectedValue)
 {
   return this.each(function() {
     // Parse the options
@@ -19,19 +19,11 @@ $.fn.dropdownSelect = function(selectedValue)
         dropdown.attr(this.name, this.value);
     });
 
-    // Dropdown button click event
-    let dropdownButtonClick = function() {
-      return function(e) {
-        // Prevent the default click event
-        e.preventDefault();
-      };
-    };
-
     // Create the button
     let dropdownButton = $('<button type="button" class="btn dropdown-toggle" data-toggle="dropdown">')
       .appendTo(dropdown)
       .addClass(buttonClass)
-      .on('click', dropdownButtonClick);
+      .on('click', e => e.preventDefault());
 
     // Create the dropdown menu
     let dropdownMenu = $('<div class="dropdown-menu">')
@@ -39,12 +31,12 @@ $.fn.dropdownSelect = function(selectedValue)
       .addClass(menuClass);
 
     // Dropdown item click event
-    let dropdownItemClick = function(e, value, label) {
+    let dropdownItemClick = function(e, value, buttonLabel) {
       value = value || $(this).attr('data-value');
-      label = label || $(this).html();
+      buttonLabel = buttonLabel || $(this).attr('data-button-label') || $(this).html();
 
       // Update the button label
-      dropdownButton.html(prefix + label + suffix);
+      dropdownButton.html(prefix + buttonLabel + suffix);
 
       // Set the value of the dropdown
       dropdown.attr('data-value', value);
@@ -52,11 +44,12 @@ $.fn.dropdownSelect = function(selectedValue)
     };
 
     // Create a dropdown item
-    let createDropdownItem = function(option) {
+    let createDropdownItem = function(elm, option) {
       let dropdownItem = $('<button type="button" class="dropdown-item">')
-        .appendTo(dropdownMenu)
+        .appendTo(elm)
         .addClass(itemClass)
         .attr('data-value', option.value)
+        .attr('data-button-label', option.buttonLabel || option.label)
         .html(option.label)
         .on('click', dropdownItemClick);
       if (typeof elm !== 'undefined')
@@ -69,21 +62,75 @@ $.fn.dropdownSelect = function(selectedValue)
         return [dropdownItem, true];
       else
         return [dropdownItem, false];
-    }
+    };
+
+    // Create a dropdown submenu
+    let createDropdownSubmenu = function(elm, option)
+    {
+      if (typeof option.submenu === 'undefined' || option.submenu.length === 0)
+        return createDropdownItem(elm, option);
+      else
+      {
+        // Create the dropdown submenu
+        let dropdownSubmenu = $('<div class="dropdown-submenu">')
+          .appendTo(dropdownMenu)
+          .on('click', e => {
+            if ($(e.currentTarget).children().is(e.target))
+            {
+              e.preventDefault();
+              e.stopPropagation();
+            }
+          });
+
+        // Create the dropdown item
+        let [dropdownItem, selected] = createDropdownItem(dropdownSubmenu, option);
+        dropdownItem
+          .off('click')
+          .on('click', e => e.preventDefault());
+
+        // Create the dropdown menu
+        let dropdownSubmenuMenu = $('<div class="dropdown-menu">')
+          .appendTo(dropdownSubmenu)
+          .addClass(menuClass);
+
+        // Recursively add submenu
+        for (let submenuOption of option.submenu)
+          createDropdownSubmenu(dropdownSubmenuMenu, submenuOption);
+
+        return [dropdownItem, selected];
+      }
+    };
 
     // Add the items to the menu
     let selectedItem = undefined;
-    $(this).find('option').each(function() {
-      let [dropdownItem, selected] = createDropdownItem({
-        value: this.value,
-        label: this.label || $(this).html(),
-        disabled: this.disabled,
-        selected: this.selected
-      });
 
-      if (selected)
-        selectedItem = dropdownItem;
-    });
+    // Check for items to populate
+    if (typeof itemsToPopulate !== 'undefined')
+    {
+      // Add items to populate
+      $.each(itemsToPopulate, function() {
+        let [dropdownItem, selected] = createDropdownSubmenu(dropdownMenu, this);
+
+        if (selected)
+          selectedItem = dropdownItem;
+      });
+    }
+    else
+    {
+      // Add options that are present on the element
+      $(this).find('option').each(function() {
+        let [dropdownItem, selected] = createDropdownItem(dropdownMenu, {
+          value: this.value,
+          label: this.label || $(this).html(),
+          buttonLabel: $(this).html(),
+          disabled: this.disabled,
+          selected: this.selected
+        });
+
+        if (selected)
+          selectedItem = dropdownItem;
+      });
+    }
 
     // Select the first or selected item
     if (typeof selectedValue !== 'undefined' && dropdown.find(`.dropdown-item[data-value="${selectedValue}"]`).length > 0)

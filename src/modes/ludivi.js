@@ -76,6 +76,7 @@ class LudiviTransliteration extends Transliteration
 
 let standard = {
   id: 'ludivi_standard',
+  family: "Ludivi",
   name: "Standaard",
   charmap: new Charmap([
     "á", "é", "í", "ó", "ú", "ə", "„", "¡", "¿"
@@ -112,6 +113,7 @@ let standard = {
 
 let nirinvi = {
   id: 'ludivi_nirinvi',
+  family: "Ludivi",
   name: "Nirinvi",
   charmap: new Charmap(["ë", "„", "¡", "¿"]),
   transliteration: new LudiviTransliteration({
@@ -142,6 +144,7 @@ let nirinvi = {
 
 let imirtaane = {
   id: 'ludivi_imirtaane',
+  family: "Ludivi",
   name: "Imirtaane",
   charmap: new Charmap(["„", "¡", "¿"]),
   transliteration: new LudiviTransliteration({
@@ -173,6 +176,7 @@ let imirtaane = {
 
 let naori = {
   id: 'ludivi_naori',
+  family: "Ludivi",
   name: "Naori",
   charmap: new Charmap([
     "á", "ḍ", "é", "ġ", "ḥ", "í", "ḳ", "ḷ",
@@ -221,6 +225,7 @@ let naori = {
 
 let garaman = {
   id: 'ludivi_garaman',
+  family: "Ludivi",
   name: "Garaman",
   charmap: new Charmap(["à", "è", "ó", "„", "¡", "¿"]),
   transliteration: new LudiviTransliteration({
@@ -249,6 +254,7 @@ let garaman = {
 };
 
 export default {
+  id: "ludivi",
   name: "Ludivi",
   category: "Garah",
   font: "Garahcode",

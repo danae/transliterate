@@ -15,10 +15,17 @@ textarea#from, textarea#to, .charmap-btn {
 }
 
 .navbar {
+  font-family: $font-heading;
+  font-size: 1.25rem;
   border-bottom: 2px $color-accent dotted;
 
   .navbar-brand {
     color: $color-accent;
+  }
+
+  .navbar-toggler {
+    color: $color-accent;
+    border-color: $color-accent;
   }
 }
 
@@ -31,4 +38,37 @@ textarea#from, textarea#to, .charmap-btn {
 }
 .form-control[readonly] {
   background-color: #FFFFFF;
+}
+
+.dropdown-toggle:after {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: normal;
+  content: "\f078";
+  float: right;
+
+  margin-left: 0.5rem;
+  border: none;
+}
+
+.dropdown-submenu {
+  position: relative;
+
+  & > .dropdown-item:after {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: "\f054";
+    float: right;
+  }
+
+  & > .dropdown-menu {
+    top: -8px;
+    left: 100%;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+
+  &:hover > .dropdown-menu, &:focus > .dropdown-menu {
+    display: block;
+  }
 }

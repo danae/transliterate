@@ -11,16 +11,30 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container">
-        <span class="navbar-brand mb-0 h1">
+        <a class="navbar-brand mb-0" href="#">
           <i class="fas fa-fw fa-feather-alt"></i> trans·'li·te·rate
-        </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+          <i class="fas fa-bars fa-fw"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#/charmap">Karaktertabel</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#/fonts">Lettertypen</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
 
     <main class="container mt-3">
       <div class="input-group mb-3">
-        <select id="script" class="mr-2" data-prefix="<i class=&quot;fas fa-fw fa-pencil-alt&quot;></i> " data-button-class="btn-outline-dark" data-item-class="btn-sm"></select>
-        <select id="template" class="mr-2" data-prefix="<i class=&quot;fas fa-fw fa-scroll&quot;></i> " data-button-class="btn-outline-dark" data-item-class="btn-sm"></select>
+        <select id="script" class="mr-2" data-prefix="<i class=&quot;fas fa-fw fa-pencil-alt&quot;></i> " data-button-class="btn-outline-dark" data-menu-class="shadow" data-item-class="btn-sm"></select>
+        <select id="template" class="mr-2" data-prefix="<i class=&quot;fas fa-fw fa-scroll&quot;></i> " data-button-class="btn-outline-dark" data-menu-class="shadow" data-item-class="btn-sm"></select>
       </div>
 
       <div class="row">

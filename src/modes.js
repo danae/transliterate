@@ -9,7 +9,7 @@ import syhhttipp from './modes/syhhttipp.js';
 import tatsuric from './modes/tatsuric.js';
 import ulughese from './modes/ulughese.js';
 
-let modes = [
+export default [
   cylenian,
   syrrin,
   ludivi,
@@ -20,26 +20,3 @@ let modes = [
   tatsuric,
   ulughese
 ];
-
-let normalizedModes = [];
-for (let mode of modes)
-{
-  if (typeof mode.transliterations !== "undefined")
-  {
-    for (let transliteration of mode.transliterations)
-    {
-      normalizedModes.push({
-        id: transliteration.id,
-        name: mode.name + ' (' + transliteration.name + ')',
-        category: mode.category,
-        font: mode.font,
-        charmap: transliteration.charmap,
-        transliteration: transliteration.transliteration
-      });
-    }
-  }
-  else
-    normalizedModes.push(mode);
-}
-
-export default normalizedModes;
