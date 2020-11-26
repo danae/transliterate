@@ -1,7 +1,7 @@
 import './dropdown.js';
 
-import Script from '../src/Script.js';
-import Template from '../src/Template.js';
+import Script from '../src/script.js';
+import Template from '../src/template.js';
 
 
 // Function for sorting an array by a key or a function
