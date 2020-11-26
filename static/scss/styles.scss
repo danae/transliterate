@@ -1,0 +1,91 @@
+// Import custom variables
+@import 'variables';
+
+// Import the Bulma framework
+@import 'bulma';
+
+
+// Container layout
+.container {
+  //max-width: ($desktop - (2 * $gap)) !important;
+}
+
+// Header styling
+.header {
+  @extend .content;
+  @extend .py-0;
+
+  background: none;
+}
+
+// Footer styling
+.footer {
+  @extend .content;
+  @extend .my-6;
+  @extend .py-0;
+
+  background: none;
+
+  @extend .is-size-7;
+  @extend .has-text-grey;
+  @extend .has-text-centered;
+
+  a {
+    color: $grey;
+    border-bottom-color: $grey;
+
+    &:hover, &:focus {
+      color: $link-hover;
+      border-bottom-color: $link-hover;
+    }
+  }
+}
+
+// Content styling
+.content {
+  // Headings
+  @for $i from 1 through 6 {
+    h#{$i} {
+      @extend .has-text-weight-normal;
+      @if $i <= 2 {
+        @extend .has-text-primary;
+      }
+    }
+  }
+
+  // Lead text
+  .lead {
+    @extend .is-size-5;
+    @extend .has-text-weight-light;
+  }
+}
+
+// Dropdown styling
+.dropdown {
+  // Dropdown menu
+  .dropdown-content {
+    max-height: 25rem;
+    overflow-y: auto;
+  }
+
+  // Dropdown item
+  .dropdown-item {
+    @extend .is-size-7;
+    @extend .py-1;
+  }
+
+  // Dropdown header
+  .dropdown-header {
+    @extend .has-text-primary;
+  }
+}
+
+// Scripts styling
+.scripts {
+  font-family: $family-scripts, $family-primary;
+}
+
+// Textare astyling
+textarea {
+  @extend .scripts;
+}

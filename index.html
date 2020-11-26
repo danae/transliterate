@@ -3,67 +3,102 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="static/css/styles.css">
     <title>Transliterate</title>
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container">
-        <a class="navbar-brand mb-0" href="#">
-          <i class="fas fa-fw fa-feather-alt"></i> trans·'li·te·rate
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
-          <i class="fas fa-bars fa-fw"></i>
-        </button>
+    <header class="header section container my-5">
+      <h2 class="my-1">
+        <i class="fas fa-fw fa-feather-alt"></i>
+        <span class="has-text-weight-bold">trans·'li·te·rate</span>
+      </h2>
 
-        <div class="collapse navbar-collapse" id="navbar">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#/charmap">Karaktertabel</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#/fonts">Lettertypen</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+      <h4 class="my-1">
+        <span>to represent letters or words in the characters of another writing system</span>
+      </h4>
+    </header>
 
-    <main class="container mt-3">
-      <div class="input-group mb-3">
-        <select id="script" class="mr-2" data-prefix="<i class=&quot;fas fa-fw fa-pencil-alt&quot;></i> " data-button-class="btn-outline-dark" data-menu-class="shadow" data-item-class="btn-sm"></select>
-        <select id="template" class="mr-2" data-prefix="<i class=&quot;fas fa-fw fa-scroll&quot;></i> " data-button-class="btn-outline-dark" data-menu-class="shadow" data-item-class="btn-sm"></select>
-      </div>
+    <main class="section container my-5">
+      <div class="columns">
+        <div class="column is-half-desktop">
+          <div class="box">
+            <div class="field">
+              <div class="control">
+                <div class="dropdown is-hoverable" id="script">
+                  <div class="dropdown-trigger">
+                    <button class="button is-primary is-normal">
+                      <span class="icon is-small">
+                        <i class="fas fa-pencil-alt"></i>
+                      </span>
+                      <span class="dropdown-label"></span>
+                      <span class="icon is-small">
+                        <i class="fas fa-angle-down"></i>
+                      </span>
+                    </button>
+                  </div>
 
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="form-group">
-            <textarea class="form-control" id="from" rows="5"></textarea>
+                  <div class="dropdown-menu" id="dropdown-menu">
+                    <div class="dropdown-content">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <textarea class="textarea" id="from" rows="6"></textarea>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="col-sm-6">
-          <div class="form-group">
-            <textarea class="form-control" id="to" rows="5" readonly></textarea>
+        <div class="column is-half-desktop">
+          <div class="box">
+            <div class="field">
+              <div class="control">
+                <div class="dropdown is-hoverable" id="template">
+                  <div class="dropdown-trigger">
+                    <button class="button is-primary is-normal">
+                      <span class="icon is-small">
+                        <i class="fas fa-copy"></i>
+                      </span>
+                      <span class="dropdown-label">Kopiëren</span>
+                      <span class="icon is-small">
+                        <i class="fas fa-angle-down"></i>
+                      </span>
+                    </button>
+                  </div>
+
+                  <div class="dropdown-menu" id="dropdown-menu">
+                    <div class="dropdown-content">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <textarea class="textarea" readonly id="to" rows="6"></textarea>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div id="charmap" class="mb-3"></div>
+      <!--<div id="charmap" class="mb-3"></div>-->
     </main>
 
-    <footer class="container text-center text-muted" style="font-size: smaller;">
+    <footer class="footer container my-5" style="font-size: smaller;">
       Gemaakt en gehost door <a class="text-dark" href="https://github.com/danae/transliterate">danae.dev</a><br>
       Transliterate maakt gebruik van cookies om ingestelde voorkeuren op te slaan
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/81dd8870b4.js" crossorigin="anonymous"></script>
-    <script type="module" src="src/index.js"></script>
+    <script type="module" src="js/index.js"></script>
   </body>
 </html>

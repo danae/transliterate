@@ -1,0 +1,16 @@
+// Import the initial and derived variables
+@import "../bulma/sass/utilities/initial-variables.sass";
+
+// Import the fonts
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Basic:wght@400;700&family=Open+Sans:wght@300;400&display=swap');
+
+// Import the custom fonts
+@import 'fonts';
+
+// Custom fonts
+$family-primary: 'Open Sans', sans-serif;
+$family-secondary: 'Gentium Basic', serif;
+
+// Custom colors
+$primary: #2FADA9;
+$link: $primary;

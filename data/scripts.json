@@ -1,0 +1,678 @@
+[
+  {
+    "id": "cylenian",
+    "name": "Cyleens",
+    "category": "Atlantis",
+    "font": "'Kylena Book', Geopoeia",
+    "charmap": ["ð", "þ"],
+
+    "type": "default",
+    "content": {
+      "tuples": [
+        [".", "\uEC20"], [",", "\uEC21"],
+
+        ["0", "\uEC28"], ["1", "\uEC29"], ["2", "\uEC2A"], ["3", "\uEC2B"],
+        ["4", "\uEC2C"], ["5", "\uEC2D"], ["q", "\uEC2E"],
+
+        ["a", "\uEC00"], ["ae", "\uEC01"], ["b", "\uEC02"], ["v", "\uEC03"],
+        ["d", "\uEC04"], ["ð", "\uEC05"], ["e", "\uEC06"], ["ei", "\uEC07"],
+        ["g", "\uEC08"], ["gh", "\uEC09"], ["i", "\uEC0A"], ["k", "\uEC0B"],
+        ["h", "\uEC0C"], ["gv", "\uEC0D"], ["'", "\uEC0E"], ["y", "\uEC0F"],
+        ["l", "\uEC10"], ["r", "\uEC11"], ["o", "\uEC12"], ["u", "\uEC13"],
+        ["p", "\uEC14"], ["f", "\uEC15"], ["s", "\uEC16"], ["sh", "\uEC17"],
+        ["t", "\uEC18"], ["þ", "\uEC19"], ["w", "\uEC1A"], ["m", "\uEC1B"],
+        ["n", "\uEC1C"], ["ng", "\uEC1D"], ["z", "\uEC1E"], ["zh", "\uEC2F"]
+      ]
+    }
+  },
+  {
+    "id": "syrrin",
+    "name": "Syrrin",
+    "category": "Atlantis",
+    "font": "'Syrrin Book', Geopoeia",
+    "charmap": ["ā", "æ", "ǣ", "ē", "ī", "ō", "w̄"],
+
+    "type": "default",
+    "content": {
+      "tuples": [
+        [".", "\uEC60"], [",", "\uEC61"],
+
+        ["0", "\uEC68"], ["1", "\uEC69"], ["2", "\uEC6A"], ["3", "\uEC6B"],
+        ["4", "\uEC6C"], ["5", "\uEC6D"], ["@", "\uEC6E"],
+
+        ["a", "\uEC30"], ["ā", "\uEC31"], ["æ", "\uEC32"], ["ǣ", "\uEC33"],
+        ["b", "\uEC34"], ["v", "\uEC35"], ["d", "\uEC36"], ["dh", "\uEC37"],
+        ["e", "\uEC38"], ["ē", "\uEC39"], ["g", "\uEC3A"], ["gh", "\uEC3B"],
+        ["gw", "\uEC3C"], ["ghw", "\uEC3D"], ["i", "\uEC3E"], ["ī", "\uEC3F"],
+        ["k", "\uEC40"], ["kh", "\uEC41"],["kw", "\uEC42"], ["khw", "\uEC43"],
+        ["'", "\uEC44"], ["y", "\uEC45"], ["l", "\uEC46"], ["r", "\uEC47"],
+        ["o", "\uEC48"], ["ō", "\uEC49"], ["u", "\uEC4A"], ["p", "\uEC4B"],
+        ["f", "\uEC4C"], ["s", "\uEC4D"], ["sh", "\uEC4E"], ["t", "\uEC4F"],
+        ["th", "\uEC50"], ["w", "\uEC51"], ["w̄", "\uEC52"], ["m", "\uEC53"],
+        ["n", "\uEC54"], ["ng", "\uEC55"], ["z", "\uEC56"], ["zh", "\uEC57"]
+      ]
+    }
+  },
+  {
+    "id": "daedian_standard",
+    "name": "Daedisch – Standaard",
+    "category": "Taratai",
+    "font": "'Daedian Book', Geopoeia",
+    "charmap": ["ā", "ã", "ą", "ä", "ē", "ẽ", "ę", "ī", "ō", "õ", "ǫ", "ö", "ū", "ũ", "ų", "з"],
+
+    "type": "default",
+    "content": {
+      "tuples": [
+        [".", "\uE24A"], [";", "\uE24B"], [",", "\uE24C"], ["{", "\uE24E"],
+        ["}", "\uE24F"],
+
+        ["0","\uE240"],  ["1","\uE241"],  ["2","\uE242"],  ["3","\uE243"],
+        ["4","\uE244"],  ["5","\uE245"],  ["6","\uE246"],  ["7","\uE247"],
+        ["8","\uE248"],  ["9","\uE249"],
+
+        ["a", "\uE200"], ["ā", "\uE201"], ["ä", "\uE202"], ["b", "\uE203"],
+        ["c", "\uE204"], ["ch", "\uE205"], ["d", "\uE206"], ["dh", "\uE207"],
+        ["e", "\uE208"], ["ē", "\uE209"], ["f", "\uE20A"], ["g", "\uE20B"],
+        ["gh", "\uE20C"], ["'", "\uE20D"], ["h", "\uE20E"], ["i", "\uE20F"],
+        ["ī", "\uE210"], ["j", "\uE211"], ["l", "\uE212"], ["lh", "\uE213"],
+        ["m", "\uE214"], ["n", "\uE215"], ["gn", "\uE216"], ["ng", "\uE217"],
+        ["o", "\uE218"], ["ō", "\uE219"], ["ö", "\uE21A"], ["p", "\uE21B"],
+        ["k", "\uE21C"], ["kh", "\uE21D"], ["r", "\uE21E"], ["rh", "\uE21F"],
+        ["s", "\uE220"], ["t", "\uE221"], ["th", "\uE222"], ["u", "\uE223"],
+        ["ū", "\uE224"], ["v", "\uE225"], ["w", "\uE226"], ["x", "\uE227"],
+        ["y", "\uE228"], ["z", "\uE229"], ["з", "\uE22A"],
+
+        ["!", "\uE238"], ["@", "\uE239"], ["#", "\uE23A"], ["$", "\uE23B"],
+        ["%", "\uE23C"], ["^", "\uE23D"], ["&", "\uE23E"], ["*", "\uE23F"],
+        ["(", "\uE237"],
+
+        ["ã", "\uE23B\uE200"], ["ą", "\uE23E\uE200"],
+        ["ẽ", "\uE23B\uE208"], ["ę", "\uE23E\uE208"],
+        ["õ", "\uE23B\uE218"], ["ǫ", "\uE23E\uE218"],
+        ["ũ", "\uE23B\uE223"], ["ų", "\uE23E\uE223"]
+      ]
+    }
+  },
+  {
+    "id": "daedian_cila",
+    "name": "Daedisch – Cila",
+    "category": "Taratai",
+    "font": "'Daedian Book', Geopoeia",
+    "charmap": ["ā", "ã", "ą", "ä", "ē", "ẽ", "ę", "ī", "ō", "õ", "ǫ", "ö", "ū", "ũ", "ų", "з"],
+
+    "type": "default",
+    "content": {
+      "tuples": [
+        "daedian_standard",
+
+        ["ai", "\uE239\uE200"],
+        ["au", "\uE23A\uE200"],
+        ["äi", "\uE239\uE202"],
+        ["äu", "\uE23A\uE202"]
+      ]
+    }
+  },
+  {
+    "id": "ulughese",
+    "name": "Ulughees",
+    "category": "Taratai",
+    "font": "Geopoeia",
+    "charmap": ["ă", "ä", "ã", "á", "Č", "č", "ð", "ĕ", "ë", "ẽ", "é", "ǝ", "ǧ", "ğ", "ĭ", "ï", "ĩ", "í", "ɩ", "k̊", "ł", "ŋ", "ñ", "ŏ", "ö", "õ", "ó", "p̊", "q̊", "ś", "š", "ş", "t̊", "Ç", "ç", "þ", "ŭ", "ü", "ũ", "ú", "ỹ", "ý", "ź", "ž", "ɂ"],
+
+    "type": "default",
+    "content": {
+      "caseInsensitive": false,
+      "tuples": [
+        [".", "\uE250"], [",", "\uE251"], ["!", "\uE252"], ["?", "\uE253"],
+        [":", "\uE254"], ["{", "\uE257"], ["}", "\uE258"],
+
+        ["0","\uE25D"],  ["1","\uE25E"],  ["2","\uE25F"],  ["3","\uE260"],
+        ["4","\uE261"],  ["5","\uE262"],  ["6","\uE263"],  ["7","\uE264"],
+        ["8","\uE265"],  ["9","\uE266"],
+
+        ["e", "\uE26B"], ["ĕ", "\uE26C"], ["ë", "\uE26D"], ["ẽ", "\uE26E"],
+        ["é", "\uE26F"], ["p", "\uE271"], ["p̊", "\uE272"], ["b", "\uE273"],
+        ["f", "\uE274"], ["v", "\uE275"], ["u", "\uE276"], ["ŭ", "\uE277"],
+        ["ü", "\uE278"], ["ũ", "\uE279"], ["ú", "\uE27A"], ["w", "\uE27C"],
+        ["m", "\uE27E"], ["t", "\uE27F"], ["t̊", "\uE280"], ["Ç", "\uE281"],
+        ["d", "\uE282"], ["s", "\uE283"], ["ś", "\uE284"], ["š", "\uE285"],
+        ["ş", "\uE286"], ["z", "\uE287"], ["ź", "\uE288"], ["ž", "\uE289"],
+        ["a", "\uE28A"], ["ă", "\uE28B"], ["ä", "\uE28C"], ["ã", "\uE28D"],
+        ["á", "\uE28E"], ["r", "\uE290"], ["l", "\uE292"], ["n", "\uE294"],
+        ["ŋ", "\uE295"], ["ñ", "\uE296"], ["i", "\uE297"], ["ĭ", "\uE298"],
+        ["ï", "\uE299"], ["ĩ", "\uE29A"], ["í", "\uE29B"], ["j", "\uE29D"],
+        ["J", "\uE29E"], ["\\", "\uE29F"], ["Y", "\uE2A0"], ["C", "\uE2A1"],
+        ["Č", "\uE2A2"], ["g", "\uE2A3"], ["G", "\uE2A4"], ["ǧ", "\uE2A5"],
+        ["ğ", "\uE2A6"], ["o", "\uE2A7"], ["ŏ", "\uE2A8"], ["ö", "\uE2A9"],
+        ["õ", "\uE2AA"], ["ó", "\uE2AB"], ["h", "\uE2AD"], ["'", "\uE2AF"],
+        ["ɂ", "\uE2B0"], ["y", "\uE2B1"], ["ỹ", "\uE2B2"], ["ý", "\uE2B3"],
+        ["k", "\uE2B5"], ["k̊", "\uE2B6"], ["q", "\uE2B7"], ["q̊", "\uE2B8"],
+        ["þ", "\uE2B9"], ["ð", "\uE2BA"], ["x", "\uE2BB"], ["c", "\uE2BD"],
+        ["ć", "\uE2BE"], ["č", "\uE2BF"], ["ç", "\uE2C0"], ["Q", "\uE2C1"],
+        ["ǝ", "\uE2C2"], ["ɩ", "\uE2C3"], ["ł", "\uE2C5"]
+      ]
+    }
+  },
+  {
+    "id": "kuanga",
+    "name": "Kuanga",
+    "category": "Taratai",
+    "font": "Geopoeia",
+
+    "type": "default",
+    "content": {
+      "tuples": [
+        [".", "\uE2D0"], [",", "\uE2D1"], ["?", "\uE2D2"], ["{", "\uE2D5"],
+        ["}", "\uE2D6"],
+
+        ["0","\uE2DB"],  ["1","\uE2DC"],  ["2","\uE2DD"],  ["3","\uE2DE"],
+        ["4","\uE2DF"],  ["5","\uE2E0"],  ["6","\uE2E1"],  ["7","\uE2E2"],
+        ["8","\uE2E3"],  ["9","\uE2E4"],
+
+        ["a", "\uE2E9"], ["e", "\uE2EA"], ["o", "\uE2EB"], ["ya", "\uE2EC"],
+        ["ye", "\uE2ED"], ["yo", "\uE2EE"], ["wa", "\uE2EF"], ["we", "\uE2F0"],
+        ["wo", "\uE2F1"], ["xha", "\uE2F2"], ["xhe", "\uE2F3"], ["xho", "\uE2F4"],
+        ["ta", "\uE2F5"], ["te", "\uE2F6"], ["to", "\uE2F7"], ["qha", "\uE2F8"],
+        ["qhe", "\uE2F9"], ["qho", "\uE2FA"], ["ka", "\uE2FB"], ["ke", "\uE2FC"],
+        ["ko", "\uE2FD"], ["kua", "\uE2FE"], ["kue", "\uE2FF"], ["kuo", "\uE300"],
+        ["gua", "\uE301"], ["gue", "\uE302"], ["guo", "\uE303"], ["ma", "\uE304"],
+        ["me", "\uE305"], ["mo", "\uE306"], ["mba", "\uE307"], ["mbe", "\uE308"],
+        ["mbo", "\uE309"], ["na", "\uE30A"], ["ne", "\uE30B"], ["no", "\uE30C"],
+        ["nda", "\uE30D"], ["nde", "\uE30E"], ["ndo", "\uE30F"], ["nga", "\uE310"],
+        ["nge", "\uE311"], ["ngo", "\uE312"], ["la", "\uE313"], ["le", "\uE314"],
+        ["lo", "\uE315"], ["sa", "\uE316"], ["se", "\uE317"], ["so", "\uE318"],
+        ["za", "\uE319"]
+      ]
+    }
+  },
+  {
+    "id": "syhh_ttipp",
+    "name": "Syhh Ttipp",
+    "category": "Taratai",
+    "font": "'Syhh Ttipp Book', Geopoeia",
+
+    "type": "default",
+    "content": {
+      "rightToLeft": true,
+      "tuples": [
+        [".", "\uE34A"], [",", "\uE34B"],
+
+        ["0","\uE340"],  ["1","\uE341"],  ["2","\uE342"],  ["3","\uE343"],
+        ["4","\uE344"],  ["5","\uE345"],  ["6","\uE346"],  ["7","\uE347"],
+        ["8","\uE348"],  ["9","\uE349"],
+
+        ["a", "\uE320"], ["e", "\uE321"], ["v", "\uE322"], ["h", "\uE323"],
+        ["i", "\uE324"], ["k", "\uE325"], ["g", "\uE326"], ["m", "\uE327"],
+        ["n", "\uE328"], ["o", "\uE329"], ["p", "\uE32A"], ["b", "\uE32B"],
+        ["r", "\uE32C"], ["s", "\uE32D"], ["z", "\uE32E"], ["t", "\uE32F"],
+        ["d", "\uE330"], ["u", "\uE331"], ["y", "\uE332"], ["hh", "\uE333"],
+        ["pp", "\uE334"], ["tt", "\uE335"]
+      ]
+    }
+  },
+  {
+    "id": "holgun",
+    "name": "Holgun",
+    "visible": false,
+    "category": "Taratai",
+    "font": "'Holgun Book', Geopoeia",
+    "charmap": ["ã", "è", "é", "ë", "õ", "ö", "ú"],
+
+    "type": "default",
+    "content": {
+      "tuples": [
+        [".", "\uE38A"], [",", "\uE38B"],
+
+        ["0","\uE380"],  ["1","\uE381"],  ["2","\uE382"],  ["3","\uE383"],
+        ["4","\uE384"],  ["5","\uE385"],  ["6","\uE386"],  ["7","\uE387"],
+        ["8","\uE388"],  ["9","\uE389"],
+
+        ["a", "\uE350"], ["ã", "\uE351"], ["b", "\uE352"], ["d", "\uE353"],
+        ["e", "\uE354"], ["è", "\uE355"], ["é", "\uE356"], ["ë", "\uE357"],
+        ["f", "\uE358"], ["g", "\uE359"], ["h", "\uE35A"], ["i", "\uE35B"],
+        ["j", "\uE35C"], ["k", "\uE35D"], ["l", "\uE35E"], ["m", "\uE35F"],
+        ["n", "\uE360"], ["ng", "\uE361"], ["o", "\uE362"], ["õ", "\uE353"],
+        ["ö", "\uE364"], ["p", "\uE365"], ["r", "\uE366"], ["s", "\uE367"],
+        ["sj", "\uE368"], ["t", "\uE369"], ["ú", "\uE36A"], ["u", "\uE36B"],
+        ["v", "\uE36C"], ["w", "\uE36D"], ["z", "\uE36E"], ["zj", "\uE36F"]
+      ]
+    }
+  },
+  {
+    "id": "tatsuric",
+    "name": "Tatsurisch",
+    "category": "Taratai",
+    "font": "Geopoeia",
+
+    "type": "default",
+    "content": {
+      "tuples": [
+        [".", "\uE390"], [",", "\uE391"], [";", "\uE392"],
+
+        ["~", "\uE399"], [":", "\uE39A"],
+
+        ["pa", "\uE39B"], ["pi", "\uE39C"], ["pu", "\uE39D"], ["ta", "\uE39F"],
+        ["ti", "\uE3A0"], ["tu", "\uE3A1"], ["ka", "\uE3A3"], ["ki", "\uE3A4"],
+        ["ku", "\uE3A5"], ["fa", "\uE3A7"], ["fi", "\uE3A8"], ["fu", "\uE3A9"],
+        ["sa", "\uE3AB"], ["si", "\uE3AC"], ["su", "\uE3AD"], ["tsa", "\uE3AF"],
+        ["tsi", "\uE3B0"], ["tsu", "\uE3B1"], ["za", "\uE3B3"], ["zi", "\uE3B4"],
+        ["zu", "\uE3B5"], ["ma", "\uE3B7"], ["mi", "\uE3B8"], ["mu", "\uE3B9"],
+        ["na", "\uE3BB"], ["ni", "\uE3BC"], ["nu", "\uE3BD"], ["ba", "\uE3BF"],
+        ["bi", "\uE3C0"], ["bu", "\uE3C1"], ["da", "\uE3C3"], ["di", "\uE3C4"],
+        ["du", "\uE3C5"], ["ga", "\uE3C7"], ["gi", "\uE3C8"], ["gu", "\uE309"],
+        ["tha", "\uE3CB"], ["thi", "\uE3CC"], ["thu", "\uE3CD"], ["ha", "\uE3D2"],
+        ["hi", "\uE3D3"], ["hu", "\uE3D4"], ["ra", "\uE3D6"], ["ri", "\uE3D7"],
+        ["ru", "\uE3D8"],
+
+        ["a", "\uE3CF"], ["i", "\uE3D0"], ["u", "\uE3D1"],
+
+        ["pe", "\uE39B\uE39A"], ["py", "\uE39C\uE39A"], ["po", "\uE39D\uE39A"], ["te", "\uE39F\uE39A"],
+        ["ty", "\uE3A0\uE39A"], ["to", "\uE3A1\uE39A"], ["ke", "\uE3A3\uE39A"], ["ky", "\uE3A4\uE39A"],
+        ["ko", "\uE3A5\uE39A"], ["fe", "\uE3A7\uE39A"], ["fy", "\uE3A8\uE39A"], ["fo", "\uE3A9\uE39A"],
+        ["se", "\uE3AB\uE39A"], ["sy", "\uE3AC\uE39A"], ["so", "\uE3AD\uE39A"], ["tse", "\uE3AF\uE39A"],
+        ["tsy", "\uE3B0\uE39A"], ["tso", "\uE3B1\uE39A"], ["ze", "\uE3B3\uE39A"], ["zy", "\uE3B4\uE39A"],
+        ["zo", "\uE3B5\uE39A"], ["me", "\uE3B7\uE39A"], ["my", "\uE3B8\uE39A"], ["mo", "\uE3B9\uE39A"],
+        ["ne", "\uE3BB\uE39A"], ["ny", "\uE3BC\uE39A"], ["no", "\uE3BD\uE39A"], ["be", "\uE3BF\uE39A"],
+        ["by", "\uE3C0\uE39A"], ["bo", "\uE3C1\uE39A"], ["de", "\uE3C3\uE39A"], ["dy", "\uE3C4\uE39A"],
+        ["do", "\uE3C5\uE39A"], ["ge", "\uE3C7\uE39A"], ["gy", "\uE3C8\uE39A"], ["go", "\uE309\uE39A"],
+        ["the", "\uE3CB\uE39A"], ["thy", "\uE3CC\uE39A"], ["tho", "\uE3CD\uE39A"], ["he", "\uE3D2\uE39A"],
+        ["hy", "\uE3D3\uE39A"], ["ho", "\uE3D4\uE39A"], ["re", "\uE3D6\uE39A"], ["ry", "\uE3D7\uE39A"],
+        ["ro", "\uE3D8\uE39A"],
+
+        ["e", "\uE3CF\uE39A"], ["y", "\uE3D0\uE39A"], ["o", "\uE3D1\uE39A"],
+
+        ["p", "\uE39E"], ["t", "\uE3A2"], ["k", "\uE3A6"], ["f", "\uE3AA"],
+        ["s", "\uE3AE"], ["ts", "\uE3B2"], ["z", "\uE3B6"], ["m", "\uE3BA"],
+        ["n", "\uE3BE"], ["b", "\uE3C2"], ["d", "\uE3C6"], ["g", "\uE3CA"],
+        ["th", "\uE3CE"], ["h", "\uE3D5"], ["r", "\uE3D9"]
+      ]
+    }
+  },
+  {
+    "id": "ludivi_standard",
+    "name": "Ludivi – Standaard",
+    "category": "Garah",
+    "font": "Garahcode Book",
+    "charmap": ["á", "é", "í", "ó", "ú", "ë", "Я", "Г", "„", "¡", "¿"],
+
+    "type": "ludivi",
+    "content": {
+      "punctuation": [
+        [".", "\uDB84\uDC40"], [",", "\uDB84\uDC41"], ["-", "\uDB84\uDC42"], ["\"", "\uDB84\uDC43"],
+        ["„", "\uDB84\uDC44"], ["!", "\uDB84\uDC45"], ["¡", "\uDB84\uDC46"], ["?", "\uDB84\uDC47"],
+        ["¿", "\uDB84\uDC48"]
+      ],
+      "numerals": [
+        ["0", "\uDB84\uDC50"], ["1", "\uDB84\uDC51"], ["2", "\uDB84\uDC52"], ["3", "\uDB84\uDC53"],
+        ["4", "\uDB84\uDC54"], ["5", "\uDB84\uDC55"], ["6", "\uDB84\uDC56"], ["7", "\uDB84\uDC57"],
+        ["8", "\uDB84\uDC58"], ["9", "\uDB84\uDC59"], ["Я", "\uDB84\uDC5A"], ["Г", "\uDB84\uDC5B"]
+      ],
+      "consonants": [
+        ["n", "\uDB84\uDC02"], ["rt", "\uDB84\uDC03"], ["s", "\uDB84\uDC04"], ["z", "\uDB84\uDC05"],
+        ["l", "\uDB84\uDC06"], ["r", "\uDB84\uDC07"], ["t", "\uDB84\uDC08"], ["th", "\uDB84\uDC09"],
+        ["d", "\uDB84\uDC0A"], ["dh", "\uDB84\uDC0B"], ["ng", "\uDB84\uDC0C"], ["j", "\uDB84\uDC0D"],
+        ["ll", "\uDB84\uDC0E"], ["k", "\uDB84\uDC0F"], ["kh", "\uDB84\uDC10"], ["g", "\uDB84\uDC11"],
+        ["gh", "\uDB84\uDC12"], ["'", "\uDB84\uDC13"], ["h", "\uDB84\uDC14"], ["m", "\uDB84\uDC15"],
+        ["w", "\uDB84\uDC16"], ["p", "\uDB84\uDC17"], ["f", "\uDB84\uDC18"], ["b", "\uDB84\uDC19"],
+        ["v", "\uDB84\uDC1A"], ["nj", "\uDB84\uDC1B"], ["tj", "\uDB84\uDC1C"], ["sj", "\uDB84\uDC1D"],
+        ["dj", "\uDB84\uDC1E"], ["zj", "\uDB84\uDC1F"]
+      ],
+      "vowels": [
+        ["a", "\uDB84\uDC20"], ["á", "\uDB84\uDC21"], ["e", "\uDB84\uDC22"], ["é", "\uDB84\uDC23"],
+        ["i", "\uDB84\uDC24"], ["í", "\uDB84\uDC25"], ["y", "\uDB84\uDC26"], ["o", "\uDB84\uDC27"],
+        ["ó", "\uDB84\uDC28"], ["u", "\uDB84\uDC29"], ["ú", "\uDB84\uDC2A"]
+      ],
+      "abugida": "ë"
+    }
+  },
+  {
+    "id": "ludivi_garaman",
+    "name": "Ludivi – Garaman",
+    "category": "Garah",
+    "font": "Garahcode Book",
+    "charmap": ["à", "è", "ó", "Я", "Г", "„", "¡", "¿"],
+
+    "type": "ludivi",
+    "content": {
+      "punctuation": [
+        "ludivi_standard"
+      ],
+      "numerals": [
+        "ludivi_standard"
+      ],
+      "consonants": [
+        ["n", "\uDB84\uDC02"], ["r", "\uDB84\uDC03"], ["s", "\uDB84\uDC04"], ["z", "\uDB84\uDC05"],
+        ["l", "\uDB84\uDC06"], ["rh", "\uDB84\uDC07"], ["t", "\uDB84\uDC08"], ["d", "\uDB84\uDC0A"],
+        ["ng", "\uDB84\uDC0C"], ["j", "\uDB84\uDC0D"], ["k", "\uDB84\uDC0F"], ["g", "\uDB84\uDC11"],
+        ["h", "\uDB84\uDC14"], ["m", "\uDB84\uDC15"], ["w", "\uDB84\uDC16"], ["p", "\uDB84\uDC17"],
+        ["f", "\uDB84\uDC18"], ["b", "\uDB84\uDC19"], ["v", "\uDB84\uDC1A"]
+      ],
+      "vowels": [
+        ["a", "\uDB84\uDC20"], ["à", "\uDB84\uDC21"], ["e", "\uDB84\uDC22"], ["è", "\uDB84\uDC23"],
+        ["i", "\uDB84\uDC24"], ["o", "\uDB84\uDC27"], ["ó", "\uDB84\uDC28"], ["u", "\uDB84\uDC29"]
+      ]
+    }
+  },
+  {
+    "id": "ludivi_imirtaane",
+    "name": "Ludivi – Imirtaane",
+    "category": "Garah",
+    "font": "Garahcode Book",
+    "charmap": ["ꝛ", "Я", "Г", "„", "¡", "¿"],
+
+    "type": "ludivi",
+    "content": {
+      "punctuation": [
+        "ludivi_standard"
+      ],
+      "numerals": [
+        "ludivi_standard"
+      ],
+      "consonants": [
+        ["n", "\uDB84\uDC02"], ["ꝛ", "\uDB84\uDC03"], ["s", "\uDB84\uDC04"], ["z", "\uDB84\uDC05"],
+        ["l", "\uDB84\uDC06"], ["r", "\uDB84\uDC07"], ["t", "\uDB84\uDC08"], ["d", "\uDB84\uDC0A"],
+        ["q", "\uDB84\uDC0C"], ["j", "\uDB84\uDC0D"], ["k", "\uDB84\uDC0F"], ["g", "\uDB84\uDC11"],
+        ["c", "\uDB84\uDC13"], ["h", "\uDB84\uDC14"], ["m", "\uDB84\uDC15"], ["w", "\uDB84\uDC16"],
+        ["p", "\uDB84\uDC17"], ["f", "\uDB84\uDC18"], ["b", "\uDB84\uDC19"], ["v", "\uDB84\uDC1A"]
+      ],
+      "vowels": [
+        ["a", "\uDB84\uDC20"], ["aa", "\uDB84\uDC21"], ["e", "\uDB84\uDC22"], ["ee", "\uDB84\uDC23"],
+        ["i", "\uDB84\uDC24"], ["ii", "\uDB84\uDC25"], ["y", "\uDB84\uDC26"], ["o", "\uDB84\uDC27"],
+        ["oo", "\uDB84\uDC28"]
+      ],
+      "abugida": "u"
+    }
+  },
+  {
+    "id": "ludivi_naori",
+    "name": "Ludivi – Naorisch",
+    "category": "Garah",
+    "font": "Garahcode Book",
+    "charmap": ["á", "ḍ", "é", "ġ", "ḥ", "í", "ḷ", "ṅ", "ó", "ṗ", "ṙ", "ṡ", "ṭ", "ú", "ż", "Я", "Г", "„", "¡", "¿"],
+
+    "type": "ludivi",
+    "content": {
+      "punctuation": [
+        "ludivi_standard"
+      ],
+      "numerals": [
+        "ludivi_standard"
+      ],
+      "consonants": [
+        ["n", "\uDB84\uDC02"], ["ṙ", "\uDB84\uDC03"], ["s", "\uDB84\uDC04"], ["z", "\uDB84\uDC05"],
+        ["l", "\uDB84\uDC06"], ["r", "\uDB84\uDC07"], ["t", "\uDB84\uDC08"], ["ṭ", "\uDB84\uDC09"],
+        ["d", "\uDB84\uDC0A"], ["ḍ", "\uDB84\uDC0B"], ["j", "\uDB84\uDC0D"], ["ḷ", "\uDB84\uDC0E"],
+        ["k", "\uDB84\uDC0F"], ["ġ", "\uDB84\uDC10"], ["g", "\uDB84\uDC11"], ["ḥ", "\uDB84\uDC12"],
+        ["'", "\uDB84\uDC13"], ["h", "\uDB84\uDC14"], ["m", "\uDB84\uDC15"], ["ṗ", "\uDB84\uDC16"],
+        ["p", "\uDB84\uDC17"], ["f", "\uDB84\uDC18"], ["b", "\uDB84\uDC19"], ["v", "\uDB84\uDC1A"],
+        ["ṅ", "\uDB84\uDC1B"], ["ṡ", "\uDB84\uDC1D"], ["q", "\uDB84\uDC1E"], ["ż", "\uDB84\uDC1F"]
+      ],
+      "vowels": [
+        ["a", "\uDB84\uDC20"], ["á", "\uDB84\uDC21"], ["e", "\uDB84\uDC22"], ["é", "\uDB84\uDC23"],
+        ["i", "\uDB84\uDC24"], ["í", "\uDB84\uDC25"], ["o", "\uDB84\uDC27"], ["ó", "\uDB84\uDC28"],
+        ["u", "\uDB84\uDC29"], ["ú", "\uDB84\uDC2A"]
+      ],
+      "rules": [
+        {"regex": "at(?=%punctuation%)|at$", "replacement": "\uDB84\uDC12\uDB84\uDC20"},
+
+        {"string": "an-", "replacement": "\uDB84\uDC02\uDB84\uDC20\uDB84\uDC42"},
+        {"string": "aṙ-", "replacement": "\uDB84\uDC03\uDB84\uDC20\uDB84\uDC42"},
+        {"string": "as-", "replacement": "\uDB84\uDC04\uDB84\uDC20\uDB84\uDC42"},
+        {"string": "az-", "replacement": "\uDB84\uDC05\uDB84\uDC20\uDB84\uDC42"},
+        {"string": "al-", "replacement": "\uDB84\uDC06\uDB84\uDC20\uDB84\uDC42"},
+        {"string": "ar-", "replacement": "\uDB84\uDC07\uDB84\uDC20\uDB84\uDC42"},
+        {"string": "aṗ-", "replacement": "\uDB84\uDC16\uDB84\uDC20\uDB84\uDC42"},
+        {"string": "af-", "replacement": "\uDB84\uDC18\uDB84\uDC20\uDB84\uDC42"},
+        {"string": "aṅ-", "replacement": "\uDB84\uDC1B\uDB84\uDC20\uDB84\uDC42"},
+        {"string": "aṡ-", "replacement": "\uDB84\uDC1D\uDB84\uDC20\uDB84\uDC42"},
+        {"string": "aż-", "replacement": "\uDB84\uDC1F\uDB84\uDC20\uDB84\uDC42"},
+
+        {"string": "in-", "replacement": "\uDB84\uDC02\uDB84\uDC24\uDB84\uDC42"},
+        {"string": "eṙ-", "replacement": "\uDB84\uDC03\uDB84\uDC22\uDB84\uDC42"},
+        {"string": "is-", "replacement": "\uDB84\uDC04\uDB84\uDC24\uDB84\uDC42"},
+        {"string": "iz-", "replacement": "\uDB84\uDC05\uDB84\uDC24\uDB84\uDC42"},
+        {"string": "il-", "replacement": "\uDB84\uDC06\uDB84\uDC24\uDB84\uDC42"},
+        {"string": "er-", "replacement": "\uDB84\uDC07\uDB84\uDC22\uDB84\uDC42"},
+        {"string": "eṗ-", "replacement": "\uDB84\uDC16\uDB84\uDC22\uDB84\uDC42"},
+        {"string": "ef-", "replacement": "\uDB84\uDC18\uDB84\uDC22\uDB84\uDC42"},
+        {"string": "iṅ-", "replacement": "\uDB84\uDC1B\uDB84\uDC24\uDB84\uDC42"},
+        {"string": "iṡ-", "replacement": "\uDB84\uDC1D\uDB84\uDC24\uDB84\uDC42"},
+        {"string": "iż-", "replacement": "\uDB84\uDC1F\uDB84\uDC24\uDB84\uDC42"}
+      ]
+    }
+  },
+  {
+    "id": "ludivi_nirinvi",
+    "name": "Ludivi – Nirinvi",
+    "category": "Garah",
+    "font": "Garahcode Book",
+    "charmap": ["ā", "ē", "ī", "ō", "ū", "Я", "Г", "„", "¡", "¿"],
+
+    "type": "ludivi",
+    "content": {
+      "punctuation": [
+        "ludivi_standard"
+      ],
+      "numerals": [
+        "ludivi_standard"
+      ],
+      "consonants": [
+        ["n", "\uDB84\uDC02"], ["s", "\uDB84\uDC04"], ["l", "\uDB84\uDC06"], ["r", "\uDB84\uDC07"],
+        ["t", "\uDB84\uDC08"], ["th", "\uDB84\uDC09"], ["d", "\uDB84\uDC0A"], ["k", "\uDB84\uDC0F"],
+        ["kh", "\uDB84\uDC10"], ["g", "\uDB84\uDC11"], ["h", "\uDB84\uDC13"], ["m", "\uDB84\uDC15"],
+        ["v", "\uDB84\uDC16"], ["p", "\uDB84\uDC17"], ["ph", "\uDB84\uDC18"], ["b", "\uDB84\uDC19"]
+      ],
+      "vowels": [
+        ["a", "\uDB84\uDC20"], ["ā", "\uDB84\uDC21"], ["e", "\uDB84\uDC22"], ["ē", "\uDB84\uDC23"],
+        ["i", "\uDB84\uDC24"], ["ī", "\uDB84\uDC25"], ["o", "\uDB84\uDC27"], ["ō", "\uDB84\uDC28"],
+        ["u", "\uDB84\uDC29"], ["ū", "\uDB84\uDC2A"]
+      ]
+    }
+  },
+  {
+    "id": "ludivi_urugin",
+    "name": "Ludivi – Urugin",
+    "category": "Garah",
+    "font": "Garahcode Book",
+    "charmap": ["ṇ", "Я", "Г", "„", "¡", "¿"],
+
+    "type": "ludivi",
+    "content": {
+      "punctuation": [
+        "ludivi_standard"
+      ],
+      "numerals": [
+        "ludivi_standard"
+      ],
+      "consonants": [
+        ["n", "\uDB84\uDC02"], ["r", "\uDB84\uDC03"], ["s", "\uDB84\uDC04"], ["z", "\uDB84\uDC05"],
+        ["l", "\uDB84\uDC06"], ["rh", "\uDB84\uDC07"], ["t", "\uDB84\uDC08"], ["d", "\uDB84\uDC0A"],
+        ["ng", "\uDB84\uDC0C"], ["j", "\uDB84\uDC0D"], ["k", "\uDB84\uDC0F"], ["g", "\uDB84\uDC11"],
+        ["h", "\uDB84\uDC14"], ["m", "\uDB84\uDC15"], ["w", "\uDB84\uDC16"], ["p", "\uDB84\uDC17"],
+        ["f", "\uDB84\uDC18"], ["b", "\uDB84\uDC19"], ["v", "\uDB84\uDC1A"], ["x", "\uDB84\uDC1D"]
+      ],
+      "vowels": [
+        ["a", "\uDB84\uDC20"], ["e", "\uDB84\uDC22"], ["i", "\uDB84\uDC24"], ["o", "\uDB84\uDC27"],
+        ["u", "\uDB84\uDC29"]
+      ]
+    }
+  },
+  {
+    "id": "ludivi_vaungyr",
+    "name": "Ludivi – Vaungyr",
+    "category": "Garah",
+    "font": "Garahcode Book",
+    "charmap": ["ä", "ë", "ö", "ü", "ÿ", "Я", "Г", "„", "¡", "¿"],
+
+    "type": "ludivi",
+    "content": {
+      "punctuation": [
+        "ludivi_standard"
+      ],
+      "numerals": [
+        "ludivi_standard"
+      ],
+      "consonants": [
+        ["n", "\uDB84\uDC02"], ["r", "\uDB84\uDC03"], ["s", "\uDB84\uDC04"], ["z", "\uDB84\uDC05"],
+        ["l", "\uDB84\uDC06"], ["t", "\uDB84\uDC08"], ["d", "\uDB84\uDC0A"], ["ng", "\uDB84\uDC0C"],
+        ["j", "\uDB84\uDC0D"], ["k", "\uDB84\uDC0F"], ["g", "\uDB84\uDC11"], ["h", "\uDB84\uDC14"],
+        ["m", "\uDB84\uDC15"], ["p", "\uDB84\uDC17"], ["f", "\uDB84\uDC18"], ["b", "\uDB84\uDC19"],
+        ["v", "\uDB84\uDC1A"], ["q", "\uDB84\uDC1C"], ["c", "\uDB84\uDC1D"]
+      ],
+      "vowels": [
+        ["a", "\uDB84\uDC20"], ["ä", "\uDB84\uDC20"], ["e", "\uDB84\uDC22"], ["ë", "\uDB84\uDC22"],
+        ["i", "\uDB84\uDC24"], ["o", "\uDB84\uDC27"], ["ö", "\uDB84\uDC27"], ["u", "\uDB84\uDC28"],
+        ["ü", "\uDB84\uDC28"], ["y", "\uDB84\uDC29"], ["ÿ", "\uDB84\uDC29"]
+      ]
+    }
+  },
+  {
+    "id": "ludivi_avarit",
+    "name": "Ludivi – Avarit",
+    "category": "Garah",
+    "font": "Garahcode Book",
+    "charmap": ["á", "ḍ", "đ", "é", "ë", "ġ", "í", "ṅ", "ó", "ö", "ṡ", "ṭ", "ú", "ż", "Я", "Г", "„", "¡", "¿"],
+
+    "type": "ludivi",
+    "content": {
+      "punctuation": [
+        "ludivi_standard"
+      ],
+      "numerals": [
+        "ludivi_standard"
+      ],
+      "consonants": [
+        ["n", "\uDB84\uDC02"], ["s", "\uDB84\uDC04"], ["z", "\uDB84\uDC05"], ["l", "\uDB84\uDC06"],
+        ["r", "\uDB84\uDC07"], ["t", "\uDB84\uDC08"], ["d", "\uDB84\uDC0A"], ["đ", "\uDB84\uDC0B"],
+        ["j", "\uDB84\uDC0D"], ["ls", "\uDB84\uDC0E"], ["lz", "\uDB84\uDC0E"], ["k", "\uDB84\uDC0F"],
+        ["ġ", "\uDB84\uDC10"], ["g", "\uDB84\uDC11"], ["q", "\uDB84\uDC12"], ["h", "\uDB84\uDC14"],
+        ["m", "\uDB84\uDC15"], ["w", "\uDB84\uDC16"], ["p", "\uDB84\uDC17"], ["f", "\uDB84\uDC18"],
+        ["b", "\uDB84\uDC19"], ["v", "\uDB84\uDC1A"], ["ṅ", "\uDB84\uDC1B"], ["ṭ", "\uDB84\uDC1C"],
+        ["ṡ", "\uDB84\uDC1D"], ["ḍ", "\uDB84\uDC1E"], ["ż", "\uDB84\uDC1F"]
+      ],
+      "vowels": [
+        ["a", "\uDB84\uDC20"], ["á", "\uDB84\uDC21"], ["e", "\uDB84\uDC22"], ["é", "\uDB84\uDC23"],
+        ["i", "\uDB84\uDC24"], ["í", "\uDB84\uDC25"], ["ö", "\uDB84\uDC26"], ["o", "\uDB84\uDC27"],
+        ["ó", "\uDB84\uDC28"], ["u", "\uDB84\uDC29"], ["ú", "\uDB84\uDC2A"]
+      ],
+      "abugida": "ë"
+    }
+  },
+  {
+    "id": "ludivi_tlonjom",
+    "name": "Ludivi – Tlonjom",
+    "category": "Garah",
+    "font": "Garahcode Book",
+    "charmap": ["Я", "Г", "„", "¡", "¿"],
+
+    "type": "ludivi",
+    "content": {
+      "punctuation": [
+        "ludivi_standard"
+      ],
+      "numerals": [
+        "ludivi_standard"
+      ],
+      "consonants": [
+        ["n", "\uDB84\uDC02"], ["s", "\uDB84\uDC04"], ["z", "\uDB84\uDC05"], ["l", "\uDB84\uDC06"],
+        ["r", "\uDB84\uDC07"], ["t", "\uDB84\uDC08"], ["d", "\uDB84\uDC0A"], ["ng", "\uDB84\uDC0C"],
+        ["j", "\uDB84\uDC0D"], ["k", "\uDB84\uDC0F"], ["g", "\uDB84\uDC11"], ["h", "\uDB84\uDC14"],
+        ["m", "\uDB84\uDC15"], ["p", "\uDB84\uDC17"], ["f", "\uDB84\uDC18"], ["b", "\uDB84\uDC19"],
+        ["v", "\uDB84\uDC1A"]
+      ],
+      "vowels": [
+        ["a", "\uDB84\uDC20"], ["e", "\uDB84\uDC22"], ["i", "\uDB84\uDC24"], ["o", "\uDB84\uDC27"],
+        ["u", "\uDB84\uDC29"], ["ö", "\uDB84\uDC2A"]
+      ],
+      "abugida": "ë"
+    }
+  },
+  {
+    "id": "ludivi_eanisma",
+    "name": "Ludivi – Eanisma",
+    "category": "Garah",
+    "font": "Garahcode Book",
+    "charmap": ["ë", "Я", "Г", "„", "¡", "¿"],
+
+    "type": "ludivi",
+    "content": {
+      "punctuation": [
+        "ludivi_standard"
+      ],
+      "numerals": [
+        "ludivi_standard"
+      ],
+      "consonants": [
+        ["n", "\uDB84\uDC02"], ["s", "\uDB84\uDC04"], ["z", "\uDB84\uDC05"], ["l", "\uDB84\uDC06"],
+        ["r", "\uDB84\uDC07"], ["t", "\uDB84\uDC08"], ["d", "\uDB84\uDC0A"], ["ng", "\uDB84\uDC0C"],
+        ["j", "\uDB84\uDC0D"], ["k", "\uDB84\uDC0F"], ["g", "\uDB84\uDC11"], ["q", "\uDB84\uDC12"],
+        ["h", "\uDB84\uDC14"], ["m", "\uDB84\uDC15"], ["w", "\uDB84\uDC16"], ["p", "\uDB84\uDC17"],
+        ["f", "\uDB84\uDC18"], ["b", "\uDB84\uDC19"], ["v", "\uDB84\uDC1A"], ["nj", "\uDB84\uDC1B"],
+        ["sy", "\uDB84\uDC1D"], ["dy", "\uDB84\uDC1E"], ["zy", "\uDB84\uDC1F"]
+      ],
+      "vowels": [
+        ["a", "\uDB84\uDC20"], ["aa", "\uDB84\uDC21"], ["e", "\uDB84\uDC22"], ["ee", "\uDB84\uDC23"],
+        ["i", "\uDB84\uDC24"], ["ii", "\uDB84\uDC25"], ["oy", "\uDB84\uDC26"], ["o", "\uDB84\uDC27"],
+        ["oo", "\uDB84\uDC28"], ["u", "\uDB84\uDC29"], ["uu", "\uDB84\uDC2A"]
+      ],
+      "abugida": "ë"
+    }
+  },
+  {
+    "id": "velaric_standard",
+    "name": "Velarisch – Standaard",
+    "category": "Garah",
+    "font": "Garahcode Book",
+    "charmap": ["á", "é", "í", "ó", "ú", "Я", "Г", "„", "¡", "¿"],
+
+    "type": "default",
+    "content": {
+      "tuples": [
+        [".", "\uDB84\uDC90"], [",", "\uDB84\uDC91"], ["-", "\uDB84\uDC92"], ["\"", "\uDB84\uDC93"],
+        ["„", "\uDB84\uDC94"], ["!", "\uDB84\uDC95"], ["¡", "\uDB84\uDC96"], ["?", "\uDB84\uDC97"],
+        ["¿", "\uDB84\uDC98"],
+
+        ["0", "\uDB84\uDCA0"], ["1", "\uDB84\uDCA1"], ["2", "\uDB84\uDCA2"], ["3", "\uDB84\uDCA3"],
+        ["4", "\uDB84\uDCA4"], ["5", "\uDB84\uDCA5"], ["6", "\uDB84\uDCA6"], ["7", "\uDB84\uDCA7"],
+        ["8", "\uDB84\uDCA8"], ["9", "\uDB84\uDCA9"], ["Я", "\uDB84\uDCAA"], ["Г", "\uDB84\uDCAB"],
+
+        ["a", "\uDB84\uDC60"], ["á", "\uDB84\uDC61"], ["n", "\uDB84\uDC62"], ["s", "\uDB84\uDC63"],
+        ["z", "\uDB84\uDC64"], ["l", "\uDB84\uDC65"], ["i", "\uDB84\uDC66"], ["í", "\uDB84\uDC67"],
+        ["e", "\uDB84\uDC68"], ["é", "\uDB84\uDC69"], ["r", "\uDB84\uDC6A"], ["t", "\uDB84\uDC6B"],
+        ["th", "\uDB84\uDC6C"], ["d", "\uDB84\uDC6D"], ["dh", "\uDB84\uDC6E"], ["ng", "\uDB84\uDC6F"],
+        ["u", "\uDB84\uDC70"], ["ú", "\uDB84\uDC71"], ["o", "\uDB84\uDC72"], ["ó", "\uDB84\uDC73"],
+        ["j", "\uDB84\uDC74"], ["k", "\uDB84\uDC75"], ["x", "\uDB84\uDC76"], ["g", "\uDB84\uDC77"],
+        ["h", "\uDB84\uDC78"], ["m", "\uDB84\uDC79"], ["w", "\uDB84\uDC7A"], ["p", "\uDB84\uDC7B"],
+        ["f", "\uDB84\uDC7C"], ["b", "\uDB84\uDC7D"], ["v", "\uDB84\uDC7E"], ["nh", "\uDB84\uDC7F"],
+        ["c", "\uDB84\uDC80"], ["sh", "\uDB84\uDC81"], ["y", "\uDB84\uDC82"], ["zh", "\uDB84\uDC83"]
+      ]
+    }
+  },
+  {
+    "id": "velaric_urugin",
+    "name": "Velarisch – Urugin",
+    "category": "Garah",
+    "font": "Garahcode Book",
+    "charmap": ["á", "é", "í", "ó", "ú", "Я", "Г", "„", "¡", "¿"],
+
+    "type": "default",
+    "content": {
+      "tuples": [
+        [".", "\uDB84\uDC90"], [",", "\uDB84\uDC91"], ["-", "\uDB84\uDC92"], ["\"", "\uDB84\uDC93"],
+        ["„", "\uDB84\uDC94"], ["!", "\uDB84\uDC95"], ["¡", "\uDB84\uDC96"], ["?", "\uDB84\uDC97"],
+        ["¿", "\uDB84\uDC98"],
+
+        ["0", "\uDB84\uDCA0"], ["1", "\uDB84\uDCA1"], ["2", "\uDB84\uDCA2"], ["3", "\uDB84\uDCA3"],
+        ["4", "\uDB84\uDCA4"], ["5", "\uDB84\uDCA5"], ["6", "\uDB84\uDCA6"], ["7", "\uDB84\uDCA7"],
+        ["8", "\uDB84\uDCA8"], ["9", "\uDB84\uDCA9"], ["Я", "\uDB84\uDCAA"], ["Г", "\uDB84\uDCAB"],
+
+        ["a", "\uDB84\uDC60"], ["n", "\uDB84\uDC62"], ["s", "\uDB84\uDC63"], ["z", "\uDB84\uDC64"],
+        ["l", "\uDB84\uDC65"], ["i", "\uDB84\uDC66"], ["e", "\uDB84\uDC68"], ["r", "\uDB84\uDC6A"],
+        ["d", "\uDB84\uDC6D"], ["ng", "\uDB84\uDC6F"], ["u", "\uDB84\uDC71"], ["o", "\uDB84\uDC72"],
+        ["j", "\uDB84\uDC74"], ["k", "\uDB84\uDC75"], ["x", "\uDB84\uDC76"], ["g", "\uDB84\uDC77"],
+        ["h", "\uDB84\uDC78"], ["m", "\uDB84\uDC79"], ["p", "\uDB84\uDC7B"], ["b", "\uDB84\uDC7D"],
+        ["v", "\uDB84\uDC7E"], ["rh", "\uDB84\uDC7F"], ["t", "\uDB84\uDC80"]
+      ]
+    }
+  }
+]

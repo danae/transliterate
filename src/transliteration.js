@@ -6,15 +6,11 @@ import TupleArray from './tuplearray.js';
 export default class Transliteration
 {
   // Constructor
-  constructor(data)
+  constructor(data, scripts)
   {
-    Object.assign(this, data);
-
-    // Apply charmap
-    this.charmap = new Charmap(this.charmap);
-
-    if (!(this.tuples instanceof TupleArray))
-      this.tuples = TupleArray.fromArray(this.tuples);
+    this.caseInsensitive = data.caseInsensitive || true;
+    this.rightToLeft = data.rightToLeft || false;
+    this.tuples = Transliteration.createTupleArray(data.tuples, 'tuples', scripts);
   }
 
   // Extend the transliteration
@@ -28,17 +24,8 @@ export default class Transliteration
     return new Transliteration(tuples, this.caseInsensitive, this.rightToLeft);
   }
 
-  // Reverse the transliteration
-  reverse()
-  {
-    let tuples = new TupleArray();
-    for (let tuple of this.tuples)
-      tuples.push(tuple.reverse());
-    return new Transliteration(tuples, this.caseInsensitive, this.rightToLeft);
-  }
-
   // Transliterate function
-  transliterate(string, template, mode)
+  transliterate(string)
   {
     let mappedString = "";
 
@@ -151,8 +138,62 @@ export default class Transliteration
     if (this.rightToLeft)
       mappedString = Transliteration.reverseString(mappedString);
 
-    // Return the mapped string
-    return typeof(template) !== 'undefined' ? template.apply(mappedString, this, mode) : mappedString;
+    // Return the string
+    return mappedString;
+  }
+
+  // Create a tuple array object
+  static createTupleArray(data, key, scripts)
+  {
+    // Check if the data is already a tuple array
+    if (data instanceof TupleArray)
+      return data;
+
+    // Iterate over the array in order to fill the tuple array
+    let tuples = new TupleArray();
+    for (let item of data)
+    {
+      // If it's an array, then add it to the tuples
+      if (typeof item === "array" || item instanceof Array)
+        tuples.push(item);
+
+      // It it's a string starting with a colon, then import tuples from another script
+      else if (typeof item === "string" || item instanceof String)
+      {
+        // Get the id of the script
+        let id = item;
+
+        // Check if there exists a script with the id
+        if (!scripts.has(id))
+          throw new Error(`In ${JSON.stringify(data)}: The script '${id}' does not exist`);
+
+        // Get the transliteration of the script
+        let script = scripts.get(id);
+        let transliteration = script.transliteration;
+
+        // Check if there exists a property with the key
+        if (!Object.keys(transliteration).includes(key))
+          throw new Error(`In ${JSON.stringify(data)}: The script '${id}' contains no property with the name '${key}'`);
+
+        // Get the property
+        let array = transliteration[key];
+
+        // Check if the property is a tuple array
+        if (!(array instanceof TupleArray))
+          throw new Error(`In ${JSON.stringify(data)}: The script '${id}' contains no property with the name '${key}' that is a tuple array`);
+
+        // Add all items in the tuple array to the tuples
+        for (let tuple of array)
+          tuples.push(tuple);
+      }
+
+      // Otherwise it's not a valid tuple array item
+      else
+        throw new Error(`In ${JSON.stringify(data)}: ${item} is not a valid tuple array item`);
+    }
+
+    // Return the tuples
+    return tuples;
   }
 
   // Reverse a string

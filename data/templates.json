@@ -1,0 +1,27 @@
+[
+  {
+    "id": "html",
+    "name": "HTML",
+    "template": "<span style=\"font-family: %font%;\">%string%</span>"
+  },
+  {
+    "id": "bbcode",
+    "name": "BBCode",
+    "template": "[font=%font%]%string%[/font]"
+  },
+  {
+    "id": "geop",
+    "name": "Geopoeia-code",
+    "template": "{{geop|%string%}}"
+  },
+  {
+    "id": "geopl",
+    "name": "Geopoeia-code (groot)",
+    "template": "{{geopl|%string%}}"
+  },
+  {
+    "id": "geopb",
+    "name": "Geopoeia-code (uitgelicht)",
+    "template": "{{geopb|%string%}}"
+  }
+]
