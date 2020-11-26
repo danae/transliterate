@@ -57,6 +57,9 @@ class Transliterate
     // Create the destination textarea
     this.toTextarea = $(data.toTextareaElm);
 
+    // Create the charmap element
+    this.charmap = $(data.charmapElm);
+
     // Trigger initial changes
     this.scriptsDropdown.trigger('change', this.defaultScript);
   }
@@ -83,6 +86,10 @@ class Transliterate
       this.toTextarea.addClass("has-text-right");
     else
       this.toTextarea.removeClass("has-text-right");
+
+    // Chenge the charmap
+    this.charmap.html('');
+    this.currentScript.charmap.render(this.charmap);
 
     // Trigger the from textarea
     this.fromTextarea.trigger('change');
@@ -208,7 +215,8 @@ $(function()
       scriptsDropdownElm: '#script',
       templatesDropdownElm: '#template',
       fromTextareaElm: '#from',
-      toTextareaElm: '#to'
+      toTextareaElm: '#to',
+      charmapElm: '#charmap'
     });
   });
 });

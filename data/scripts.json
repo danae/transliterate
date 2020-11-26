@@ -305,7 +305,7 @@
       "numerals": [
         ["0", "\uDB84\uDC50"], ["1", "\uDB84\uDC51"], ["2", "\uDB84\uDC52"], ["3", "\uDB84\uDC53"],
         ["4", "\uDB84\uDC54"], ["5", "\uDB84\uDC55"], ["6", "\uDB84\uDC56"], ["7", "\uDB84\uDC57"],
-        ["8", "\uDB84\uDC58"], ["9", "\uDB84\uDC59"], ["Я", "\uDB84\uDC5A"], ["Г", "\uDB84\uDC5B"]
+        ["8", "\uDB84\uDC58"], ["9", "\uDB84\uDC59"], ["я", "\uDB84\uDC5A"], ["г", "\uDB84\uDC5B"]
       ],
       "consonants": [
         ["n", "\uDB84\uDC02"], ["rt", "\uDB84\uDC03"], ["s", "\uDB84\uDC04"], ["z", "\uDB84\uDC05"],

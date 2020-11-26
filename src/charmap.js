@@ -19,12 +19,12 @@ export default class Charmap
         elm.append('<br>');
       else
       {
-        let button = document.createElement("button");
-        $(button).addClass("btn btn-sm btn-dark charmap-btn");
-        $(button).css("width","2.25rem");
-        $(button).css("margin","0.25rem");
-        $(button).text(char);
-        $(button).on('click',function()
+        let button = $('<button class="button is-primary is-light is-small">')
+          .css("width","2rem")
+          .css("margin","0.25rem")
+          .text(char);
+
+        button.on('click',function()
         {
           var selStart = $('#from').prop('selectionStart');
           var selEnd = $('#from').prop('selectionEnd');
