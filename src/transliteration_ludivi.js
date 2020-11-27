@@ -29,10 +29,10 @@ export default class LudiviTransliteration extends Transliteration
     });
 
     // Create patterns
-    data.punctuationPattern = data.punctuation.map(tuple => escape(tuple[0])).join("|") + "|\\s+";
-    data.numeralPattern = data.numerals.map(tuple => escape(tuple[0])).join("|");
-    data.consonantPattern = data.consonants.map(tuple => escape(tuple[0])).join("|");
-    data.vowelPattern = data.vowels.map(tuple => escape(tuple[0])).join("|");
+    data.punctuationPattern = data.punctuation.map(tuple => LudiviTransliteration.escapeRegex(tuple[0])).join("|") + "|\\s+";
+    data.numeralPattern = data.numerals.map(tuple => LudiviTransliteration.escapeRegex(tuple[0])).join("|");
+    data.consonantPattern = data.consonants.map(tuple => LudiviTransliteration.escapeRegex(tuple[0])).join("|");
+    data.vowelPattern = data.vowels.map(tuple => LudiviTransliteration.escapeRegex(tuple[0])).join("|");
     data.relat = "\u{F1001}";
     data.phujat = "\u{F102B}";
 
@@ -106,5 +106,11 @@ export default class LudiviTransliteration extends Transliteration
     this.numerals = data.numerals;
     this.consonants = data.consonants;
     this.vowels = data.vowels;
+  }
+
+  // Escape a regex string
+  static escapeRegex(string)
+  {
+    return string.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
   }
 };
