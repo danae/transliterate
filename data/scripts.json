@@ -527,6 +527,34 @@
     }
   },
   {
+    "id": "ludivi_merigami",
+    "name": "Ludivi – Merigami",
+    "category": "Garah",
+    "font": "Garahcode Book",
+    "charmap": ["Я", "Г", "„", "¡", "¿"],
+
+    "type": "ludivi",
+    "content": {
+      "punctuation": [
+        "ludivi_standard"
+      ],
+      "numerals": [
+        "ludivi_standard"
+      ],
+      "consonants": [
+        ["n", "\uDB84\uDC02"], ["s", "\uDB84\uDC04"], ["z", "\uDB84\uDC05"], ["l", "\uDB84\uDC06"],
+        ["r", "\uDB84\uDC07"], ["t", "\uDB84\uDC08"], ["d", "\uDB84\uDC0A"], ["ng", "\uDB84\uDC0C"],
+        ["j", "\uDB84\uDC0D"], ["k", "\uDB84\uDC0F"], ["g", "\uDB84\uDC11"], ["h", "\uDB84\uDC14"],
+        ["m", "\uDB84\uDC15"], ["v", "\uDB84\uDC16"], ["p", "\uDB84\uDC17"], ["f", "\uDB84\uDC18"],
+        ["b", "\uDB84\uDC19"], ["ċ", "\uDB84\uDC1C"], ["c", "\uDB84\uDC1D"]
+      ],
+      "vowels": [
+        ["a", "\uDB84\uDC20"], ["e", "\uDB84\uDC22"], ["i", "\uDB84\uDC24"], ["o", "\uDB84\uDC27"],
+        ["u", "\uDB84\uDC29"]
+      ]
+    }
+  },
+  {
     "id": "ludivi_avarit",
     "name": "Ludivi – Avarit",
     "category": "Garah",
