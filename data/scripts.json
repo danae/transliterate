@@ -293,7 +293,7 @@
     "name": "Ludivi – Standaard",
     "category": "Garah",
     "font": "Garahcode Book",
-    "charmap": ["á", "é", "í", "ó", "ú", "ë", "Я", "Г", "„", "¡", "¿"],
+    "charmap": ["á", "é", "ë", "í", "ó", "ú", "Я", "Г", "„", "¡", "¿"],
 
     "type": "ludivi",
     "content": {
@@ -642,6 +642,42 @@
         ["a", "\uDB84\uDC20"], ["aa", "\uDB84\uDC21"], ["e", "\uDB84\uDC22"], ["ee", "\uDB84\uDC23"],
         ["i", "\uDB84\uDC24"], ["ii", "\uDB84\uDC25"], ["oy", "\uDB84\uDC26"], ["o", "\uDB84\uDC27"],
         ["oo", "\uDB84\uDC28"], ["u", "\uDB84\uDC29"], ["uu", "\uDB84\uDC2A"]
+      ],
+      "abugida": "ë"
+    }
+  },
+  {
+    "id": "ludivi_ardic",
+    "name": "Ludivi – Ardisch",
+    "category": "Garah",
+    "font": "Garahcode Book",
+    "charmap": ["á", "ď", "é", "ë", "ń", "ó", "ŕ", "ś", "ť", "þ", "ź", "Я", "Г", "„", "¡", "¿"],
+
+    "type": "ludivi",
+    "content": {
+      "punctuation": [
+        [".", "\uDB84\uDC40"], [",", "\uDB84\uDC41"], ["-", "\uDB84\uDC42"], ["\"", "\uDB84\uDC43"],
+        ["„", "\uDB84\uDC44"], ["!", "\uDB84\uDC45"], ["¡", "\uDB84\uDC46"], ["?", "\uDB84\uDC47"],
+        ["¿", "\uDB84\uDC48"]
+      ],
+      "numerals": [
+        ["0", "\uDB84\uDC50"], ["1", "\uDB84\uDC51"], ["2", "\uDB84\uDC52"], ["3", "\uDB84\uDC53"],
+        ["4", "\uDB84\uDC54"], ["5", "\uDB84\uDC55"], ["6", "\uDB84\uDC56"], ["7", "\uDB84\uDC57"],
+        ["8", "\uDB84\uDC58"], ["9", "\uDB84\uDC59"], ["я", "\uDB84\uDC5A"], ["г", "\uDB84\uDC5B"]
+      ],
+      "consonants": [
+        ["n", "\uDB84\uDC02"], ["ŕ", "\uDB84\uDC03"], ["s", "\uDB84\uDC04"], ["z", "\uDB84\uDC05"],
+        ["l", "\uDB84\uDC06"], ["r", "\uDB84\uDC07"], ["t", "\uDB84\uDC08"], ["þ", "\uDB84\uDC09"],
+        ["d", "\uDB84\uDC0A"], ["dh", "\uDB84\uDC0B"], ["ń", "\uDB84\uDC0C"], ["j", "\uDB84\uDC0D"],
+        ["k", "\uDB84\uDC0F"], ["g", "\uDB84\uDC11"], ["q", "\uDB84\uDC12"], ["h", "\uDB84\uDC14"],
+        ["m", "\uDB84\uDC15"], ["v", "\uDB84\uDC16"], ["p", "\uDB84\uDC17"], ["f", "\uDB84\uDC18"],
+        ["b", "\uDB84\uDC19"], ["ť", "\uDB84\uDC1C"], ["ś", "\uDB84\uDC1D"], ["ď", "\uDB84\uDC1E"],
+        ["ź", "\uDB84\uDC1F"]
+      ],
+      "vowels": [
+        ["a", "\uDB84\uDC20"], ["á", "\uDB84\uDC21"], ["e", "\uDB84\uDC22"], ["é", "\uDB84\uDC23"],
+        ["i", "\uDB84\uDC24"], ["í", "\uDB84\uDC25"], ["y", "\uDB84\uDC26"], ["o", "\uDB84\uDC27"],
+        ["ó", "\uDB84\uDC28"], ["u", "\uDB84\uDC29"], ["ú", "\uDB84\uDC2A"]
       ],
       "abugida": "ë"
     }
