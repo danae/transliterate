@@ -656,14 +656,10 @@
     "type": "ludivi",
     "content": {
       "punctuation": [
-        [".", "\uDB84\uDC40"], [",", "\uDB84\uDC41"], ["-", "\uDB84\uDC42"], ["\"", "\uDB84\uDC43"],
-        ["„", "\uDB84\uDC44"], ["!", "\uDB84\uDC45"], ["¡", "\uDB84\uDC46"], ["?", "\uDB84\uDC47"],
-        ["¿", "\uDB84\uDC48"]
+        "ludivi_standard"
       ],
       "numerals": [
-        ["0", "\uDB84\uDC50"], ["1", "\uDB84\uDC51"], ["2", "\uDB84\uDC52"], ["3", "\uDB84\uDC53"],
-        ["4", "\uDB84\uDC54"], ["5", "\uDB84\uDC55"], ["6", "\uDB84\uDC56"], ["7", "\uDB84\uDC57"],
-        ["8", "\uDB84\uDC58"], ["9", "\uDB84\uDC59"], ["я", "\uDB84\uDC5A"], ["г", "\uDB84\uDC5B"]
+        "ludivi_standard"
       ],
       "consonants": [
         ["n", "\uDB84\uDC02"], ["ŕ", "\uDB84\uDC03"], ["s", "\uDB84\uDC04"], ["z", "\uDB84\uDC05"],
