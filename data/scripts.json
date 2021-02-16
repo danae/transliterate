@@ -763,7 +763,7 @@
         ["v", "\uDB84\uDC7E"], ["ṅ", "\uDB84\uDC7F"], ["ṭ", "\uDB84\uDC80"], ["ṡ", "\uDB84\uDC81"],
         ["ḍ", "\uDB84\uDC82"], ["ż", "\uDB84\uDC83"],
 
-        ["ö", "\uDB84\uDC68\uDB84\uDC70"]
+        ["ë", "\uDB84\uDC68\uDB84\uDC68"], ["ö", "\uDB84\uDC68\uDB84\uDC70"]
       ]
     }
   },
