@@ -6,11 +6,13 @@ import TupleArray from './tuplearray.js';
 export default class Transliteration
 {
   // Constructor
-  constructor(data, scripts)
+  constructor(script, data, scripts)
   {
+    this.script = script;
     this.caseInsensitive = data.caseInsensitive || true;
     this.rightToLeft = data.rightToLeft || false;
     this.tuples = Transliteration.createTupleArray(data.tuples, 'tuples', scripts);
+    this.variables = data.variables || {};
   }
 
   // Extend the transliteration
@@ -27,119 +29,201 @@ export default class Transliteration
   // Transliterate function
   transliterate(string)
   {
-    let mappedString = "";
+    // Check if the string is empty
+    if (string === undefined || string === null || string === "")
+      return "";
 
-    // Check if case-insensitive
+    // Check if the string case-insensitive
     if (this.caseInsensitive)
       string = string.toLowerCase();
 
-    let appliedTuples = [];
+    // Get all matching tuples
+    let tuples = this._matchTuples(string);
 
     // Iterate over the string
-    while (string.length > 0)
+    console.group(`Transliterating "${string}" using ${this.script.name}`);
+
+    let position = 0, result = "";
+    while (position < string.length)
     {
-      // Found tuples array
-      let foundTuples = [];
+      // Remove all tuples that occur before this position
+      while (tuples.length > 0 && tuples[0].index < position)
+        tuples.shift();
 
-      // Iterate over the tuples
-      for (let tuple of this.tuples)
+      // Check if there are tuples left, otherwise break
+      if (tuples.length === 0)
       {
-        let pattern = tuple[0];
-        let replacement = tuple[1];
-
-        // If the pattern is a regular expression
-        if (pattern instanceof RegExp)
-        {
-          // Match the pattern
-          let match = string.match(pattern);
-          if (match !== null)
-          {
-            // If the replacement is a function, call it with the matches
-            let localReplacement = replacement;
-            if (typeof localReplacement === "function")
-              localReplacement = localReplacement(match);
-
-            // Add to the found tuples
-            foundTuples.push([pattern, localReplacement, match.index, match[0].length, match[0]])
-          }
-        }
-
-        // If the pattern is a string
-        else if (typeof pattern === "string")
-        {
-          // Check the start of the string for the pattern
-          let index = string.indexOf(pattern);
-          if (index > -1)
-          {
-            // If the replacement is a function, call it with the pattern
-            let localReplacement = replacement;
-            if (typeof localReplacement === "function")
-              localReplacement = localReplacement([pattern]);
-
-            // Add to the found tuples
-            foundTuples.push([pattern, localReplacement, index, pattern.length])
-          }
-        }
-
-        // If the pattern is something else
-        else
-          throw "In tuple " + JSON.stringify(tuple) + ": pattern is not or cannot be converted to a string or regular expression";
+        // Add the final portion of the string to the result
+        result += string.slice(position);
+        break;
       }
 
-      // Check if any tuples were found
-      if (foundTuples.length === 0)
-      {
-        // Increase the cursor and search again
-        mappedString += string.substring(0,1);
-        string = string.substring(1);
-      }
-      else
-      {
-        // Sort the found tuples
-        foundTuples.sort(function(a, b) {
-          // Tuples with lower index go first
-          if (a[2] != b[2])
-            return a[2] - b[2];
+      // Replace the first tuple of the matched tuples at this position
+      let tuple = tuples.shift();
+      if (tuple.index > position)
+        result += string.slice(position, tuple.index);
+      result += tuple.replacement;
 
-          // Tuples with longer length go first
-          else if (a[3] != b[3])
-            return b[3] - a[3];
+      let replacementCodepoints = "[" + [...tuple.replacement].map(s => "U+" + s.codePointAt(0).toString(16).toUpperCase()).join(" ") + "]";
+      console.group(`At position ${position}, match "${string.substr(tuple.index, tuple.length)}"`);
+      console.log("Pattern:", tuple.pattern);
+      console.log("Replacement:", tuple.replacement, replacementCodepoints);
+      console.groupEnd();
 
-          // Regex tuples go first
-          if (a[0] instanceof RegExp)
-            return -1;
-          else if (b[0] instanceof RegExp)
-            return 1;
-
-          // Longer string tuples go first
-          else if (a[0].length !== b[0].length)
-            return b[0].length - a[0].length;
-
-          // Otherwist just sort by unicode point
-          else
-            return a[0].localeCompare(b[0]);
-        });
-
-        // Select the first tuple and use that for replacement
-        let tuple = foundTuples[0];
-        appliedTuples.push(tuple);
-
-        // Add the replacement
-        if (tuple[2] > 0)
-          mappedString += string.substring(0,tuple[2]);
-        mappedString += tuple[1];
-
-        // Move the cursor
-        string = string.substring(tuple[2] + tuple[3]);
-      }
+      // Move the position and shift
+      position = tuple.index + tuple.length;
     }
 
-    // RTL mode
+    console.groupEnd();
+
+    // Check if the transliteration is right-to-left
     if (this.rightToLeft)
-      mappedString = Transliteration.reverseString(mappedString);
+      result = Transliteration.reverseString(result);
+
+    // Return the result string
+    return result;
+  }
+
+  // Find all matching tuples in a string
+  _matchTuples(string)
+  {
+    let tuples = [];
+
+    // Iterate over the tuples
+    for (let tuple of this.tuples)
+    {
+      let [pattern, replacement] = tuple;
+
+      // If the pattern is a regular expression
+      if (pattern instanceof RegExp)
+      {
+        // Match the pattern
+        for (let match of string.matchAll(pattern))
+        {
+          // If the replacement is a function, call it with the matches
+          let localReplacement = replacement;
+          if (typeof localReplacement === "function")
+            localReplacement = localReplacement([...match]);
+
+          // Apply replacement variables
+          localReplacement = this._applyVariables(localReplacement, match);
+
+          // Add to the found tuples
+          tuples.push({index: match.index, length: match[0].length, pattern: pattern, replacement: localReplacement, match: match[0]});
+        }
+      }
+
+      // If the pattern is a string
+      else if (typeof pattern === "string")
+      {
+        // Find all indexes where the string occurs
+        let start = 0, index = 0;
+        while ((index = string.indexOf(pattern, start)) > -1)
+        {
+          // If the replacement is a function, call it with the pattern
+          let localReplacement = replacement;
+          if (typeof localReplacement === "function")
+            localReplacement = localReplacement([pattern]);
+
+          // Apply replacement variables
+          localReplacement = this._applyVariables(localReplacement, [pattern]);
+
+          // Add to the found tuples
+          tuples.push({index: index, length: pattern.length, pattern: pattern, replacement: localReplacement});
+
+          // Update the start position
+          start = index + pattern.length;
+        }
+      }
+
+      // If the pattern is something else
+      else
+        throw new Error("In tuple " + JSON.stringify(tuple) + ": pattern is not a string or regular expression");
+    }
+
+    // Sort the tuples
+    if (tuples.length > 0)
+      tuples.sort(this._compareTuples);
+
+    // Return the tuples
+    return tuples;
+  }
+
+  // Compare two matched tuples
+  _compareTuples(a, b)
+  {
+    // Tuples with lower index go first
+    if (a.index != b.index)
+      return a.index - b.index;
+
+    // Tuples with longer length go first
+    else if (a.length != b.length)
+      return b.length - a.length;
+
+    // Regex tuples go first
+    if (a.pattern instanceof RegExp)
+      return -1;
+    else if (b.pattern instanceof RegExp)
+      return 1;
+
+    // Longer string tuples go first
+    else if (a.pattern.length !== b.pattern.length)
+      return b.pattern.length - a.pattern.length;
+
+    // Otherwist just sort by unicode point
+    else
+      return a.pattern.localeCompare(b.pattern);
+  }
+
+  // Apply the replacement variables
+  _applyVariables(string, match)
+  {
+    // Replace total match
+    string = string.replaceAll(/\$0/gi, match[0]);
+
+    // Replace match patterns
+    string = string.replaceAll(/\$([1-9][0-9]*)/gi, function(m, p1) {
+      // Get the capture group with the specified index
+      let index = parseInt(p1);
+      if (isNaN(index) || match[index] === undefined)
+        throw new Error("Variable $" + p1 + " is not a valid capture group")
+
+      // Return the corresponding capture group
+      return match[index];
+    }.bind(this));
+
+    // Replace variables
+    string = string.replaceAll(/\$([a-z_][a-z0-9_]*)(?:\(([^)]*)\))?/gi, function(m, p1, p2) {
+      // Get the variable with the given name
+      let value = this.variables[p1];
+
+      // If the value is a string
+      if (typeof value === "string")
+      {
+        // Replace the variable with the value
+        return value;
+      }
+
+      // If the value is a function
+      else if (typeof value == "function")
+      {
+        // Split and parse the parameters
+        let params = p2.split(",").map(s => JSON.parse(s.trim()));
+
+        // Replace the variable with the called function result
+        return value(...params);
+      }
+
+      // If the value is something else
+      else
+        throw new Error("Variable $" + p1 + " is not a string or function");
+    }.bind(this));
+
+    // Replace literal dollar signs
+    string = string.replaceAll(/\$\$/g, "$$");
 
     // Return the string
-    return mappedString;
+    return string;
   }
 
   // Create a tuple array object

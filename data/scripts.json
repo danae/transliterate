@@ -413,31 +413,10 @@
         ["u", "\uDB84\uDC29"], ["ú", "\uDB84\uDC2A"]
       ],
       "rules": [
-        {"regex": "at(?=%punctuation%)|at$", "replacement": "\uDB84\uDC12\uDB84\uDC20"},
-
-        {"string": "an-", "replacement": "\uDB84\uDC02\uDB84\uDC20\uDB84\uDC42"},
-        {"string": "aṙ-", "replacement": "\uDB84\uDC03\uDB84\uDC20\uDB84\uDC42"},
-        {"string": "as-", "replacement": "\uDB84\uDC04\uDB84\uDC20\uDB84\uDC42"},
-        {"string": "az-", "replacement": "\uDB84\uDC05\uDB84\uDC20\uDB84\uDC42"},
-        {"string": "al-", "replacement": "\uDB84\uDC06\uDB84\uDC20\uDB84\uDC42"},
-        {"string": "ar-", "replacement": "\uDB84\uDC07\uDB84\uDC20\uDB84\uDC42"},
-        {"string": "aṗ-", "replacement": "\uDB84\uDC16\uDB84\uDC20\uDB84\uDC42"},
-        {"string": "af-", "replacement": "\uDB84\uDC18\uDB84\uDC20\uDB84\uDC42"},
-        {"string": "aṅ-", "replacement": "\uDB84\uDC1B\uDB84\uDC20\uDB84\uDC42"},
-        {"string": "aṡ-", "replacement": "\uDB84\uDC1D\uDB84\uDC20\uDB84\uDC42"},
-        {"string": "aż-", "replacement": "\uDB84\uDC1F\uDB84\uDC20\uDB84\uDC42"},
-
-        {"string": "in-", "replacement": "\uDB84\uDC02\uDB84\uDC24\uDB84\uDC42"},
-        {"string": "eṙ-", "replacement": "\uDB84\uDC03\uDB84\uDC22\uDB84\uDC42"},
-        {"string": "is-", "replacement": "\uDB84\uDC04\uDB84\uDC24\uDB84\uDC42"},
-        {"string": "iz-", "replacement": "\uDB84\uDC05\uDB84\uDC24\uDB84\uDC42"},
-        {"string": "il-", "replacement": "\uDB84\uDC06\uDB84\uDC24\uDB84\uDC42"},
-        {"string": "er-", "replacement": "\uDB84\uDC07\uDB84\uDC22\uDB84\uDC42"},
-        {"string": "eṗ-", "replacement": "\uDB84\uDC16\uDB84\uDC22\uDB84\uDC42"},
-        {"string": "ef-", "replacement": "\uDB84\uDC18\uDB84\uDC22\uDB84\uDC42"},
-        {"string": "iṅ-", "replacement": "\uDB84\uDC1B\uDB84\uDC24\uDB84\uDC42"},
-        {"string": "iṡ-", "replacement": "\uDB84\uDC1D\uDB84\uDC24\uDB84\uDC42"},
-        {"string": "iż-", "replacement": "\uDB84\uDC1F\uDB84\uDC24\uDB84\uDC42"}
+        {"regex": "(%consonant%)a\\(t\\)(?=%punctuation%|$)", "replacement": "$consonantFor(\"$1\")\uDB84\uDC12\uDB84\uDC20"},
+        {"regex": "a([nṙszlrṗfṅṡż])(?=[-])", "replacement": "$consonantFor(\"$1\")\uDB84\uDC20"},
+        {"regex": "e([ṙrṗf])(?=[-])", "replacement": "$consonantFor(\"$1\")\uDB84\uDC22"},
+        {"regex": "i([nszlṅṡż])(?=[-])", "replacement": "$consonantFor(\"$1\")\uDB84\uDC24"}
       ]
     }
   },

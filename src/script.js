@@ -22,18 +22,18 @@ export default class Script
     this.category = data.category || "Geen";
     this.font = data.font;
     this.charmap = new Charmap(data.charmap || []);
-    this.transliteration = Script.createTransliteration(data.type, data.content, scripts);
+    this.transliteration = Script.createTransliteration(this, data.type, data.content, scripts);
   }
 
   // Create a transliteration object
-  static createTransliteration(type, content, scripts)
+  static createTransliteration(script, type, content, scripts)
   {
     // Check if the type is a valid transliteration type
     if (!Object.keys(transliterations).includes(type))
       throw new Error(`The type ${type} is not a valid transliteration type`);
 
     // Create and return the transliteration
-    return new transliterations[type](content, scripts);
+    return new transliterations[type](script, content, scripts);
   }
 
   // Load scripts from a URL
