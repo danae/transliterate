@@ -560,9 +560,8 @@
       "vowels": [
         ["a", "\uDB84\uDC20"], ["á", "\uDB84\uDC21"], ["e", "\uDB84\uDC22"], ["é", "\uDB84\uDC23"],
         ["i", "\uDB84\uDC24"], ["í", "\uDB84\uDC25"], ["ö", "\uDB84\uDC26"], ["o", "\uDB84\uDC27"],
-        ["ó", "\uDB84\uDC28"], ["u", "\uDB84\uDC29"], ["ú", "\uDB84\uDC2A"]
-      ],
-      "abugida": "ë"
+        ["ó", "\uDB84\uDC28"], ["u", "\uDB84\uDC29"], ["ú", "\uDB84\uDC2A"], ["ë", "\uDB84\uDC2B"]
+      ]
     }
   },
   {
