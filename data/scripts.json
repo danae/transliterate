@@ -413,7 +413,7 @@
         ["u", "\uDB84\uDC29"], ["ú", "\uDB84\uDC2A"]
       ],
       "rules": [
-        {"regex": "(%consonant%)a\\(t\\)(?=%punctuation%|$)", "replacement": "$consonantFor(\"$1\")\uDB84\uDC12\uDB84\uDC20"},
+        {"regex": "(%consonant%)a\\(t\\)", "replacement": "$consonantFor(\"$1\")\uDB84\uDC12\uDB84\uDC20"},
         {"regex": "a([nṙszlrṗfṅṡż])(?=[-])", "replacement": "$consonantFor(\"$1\")\uDB84\uDC20"},
         {"regex": "e([ṙrṗf])(?=[-])", "replacement": "$consonantFor(\"$1\")\uDB84\uDC22"},
         {"regex": "i([nszlṅṡż])(?=[-])", "replacement": "$consonantFor(\"$1\")\uDB84\uDC24"}
@@ -734,7 +734,7 @@
         ["a", "\uDB84\uDC60"], ["á", "\uDB84\uDC61"], ["n", "\uDB84\uDC62"], ["s", "\uDB84\uDC63"],
         ["z", "\uDB84\uDC64"], ["l", "\uDB84\uDC65"], ["i", "\uDB84\uDC66"], ["í", "\uDB84\uDC67"],
         ["e", "\uDB84\uDC68"], ["é", "\uDB84\uDC69"], ["r", "\uDB84\uDC6A"], ["t", "\uDB84\uDC6B"],
-        ["d", "\uDB84\uDC6D"], ["đ", "\uDB84\uDC6E"], ["q", "\uDB84\uDC6F"], ["u", "\uDB84\uDC70"], 
+        ["d", "\uDB84\uDC6D"], ["đ", "\uDB84\uDC6E"], ["q", "\uDB84\uDC6F"], ["u", "\uDB84\uDC70"],
         ["ú", "\uDB84\uDC71"], ["o", "\uDB84\uDC72"], ["ó", "\uDB84\uDC73"], ["j", "\uDB84\uDC74"],
         ["k", "\uDB84\uDC75"], ["ġ", "\uDB84\uDC76"], ["g", "\uDB84\uDC77"], ["h", "\uDB84\uDC78"],
         ["m", "\uDB84\uDC79"], ["w", "\uDB84\uDC7A"], ["p", "\uDB84\uDC7B"], ["f", "\uDB84\uDC7C"],
