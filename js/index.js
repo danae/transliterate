@@ -40,10 +40,16 @@ class Transliterate
     this.templatesDropdownElm = data.templatesDropdownElm;
     this.defaultTemplate = data.defaultTemplate || Cookies.get('transliterate.template');
 
+    // Create the scripts bar
+    this.scriptsBar = $(data.scriptsBarElm);
+
     // Create the scripts dropdown
     $(this.scriptsDropdownElm).dropdownSelect(this.scriptsDropdownItems, this.defaultScript);
     this.scriptsDropdown = $(data.scriptsDropdownElm);
     this.scriptsDropdown.on('change', this.onScriptsDropdownChange.bind(this));
+
+    // Create the templates bar
+    this.templatesBar = $(data.templatesBarElm);
 
     // Create the templates dropdown
     $(this.templatesDropdownElm).dropdownSelect(this.templatesDropdownItems, this.defaultTemplate, true);
@@ -116,8 +122,14 @@ class Transliterate
 
     // Copy the text to the clipboard
     navigator.clipboard.writeText(text).then(function() {
-      console.log("Copied!");
-    });
+      // Append the copied message to the templates bar
+      let message = this.templatesBar.find('#copied-message');
+      if (message.length > 0)
+        message.stop(true).css('opacity', 1.0);
+      else
+        message = $('<div class="control" id="copied-message">').html('<p class="py-2">Tekst gekopieerd!</p>').appendTo(this.templatesBar)
+      message.fadeOut(2000, () => message.remove());
+    }.bind(this));
   }
 
   // Event handler when the from textarea changes
@@ -179,13 +191,21 @@ class Transliterate
     let templatesDropdownItems = [];
 
     // Add the empty template
-    templatesDropdownItems.push({type: 'item', value: 'none', label: `Kopiëren`, html: template.name});
+    templatesDropdownItems.push({type: 'item', value: 'none', label: 'Kopiëren'});
 
-    // Iterate over the templates
-    for (let template of templates)
+    // Add the templates
+    if (templates.length > 0)
     {
-      // Add the template to the items
-      templatesDropdownItems.push({type: 'item', value: template.id, label: `Kopiëren als ${template.name}`});
+      // Add a diviver
+      templatesDropdownItems.push({type: 'divider'});
+      templatesDropdownItems.push({type: 'header', label: 'Sjablonen'});
+
+      // Iterate over the templates
+      for (let template of templates)
+      {
+        // Add the template to the items
+        templatesDropdownItems.push({type: 'item', value: template.id, label: template.name});
+      }
     }
 
     // Return the templates dropdown items
@@ -212,7 +232,9 @@ $(function()
       templates: templates,
 
       // UI selectors
+      srciptsBarElm: '#script-bar',
       scriptsDropdownElm: '#script',
+      templatesBarElm: '#template-bar',
       templatesDropdownElm: '#template',
       fromTextareaElm: '#from',
       toTextareaElm: '#to',

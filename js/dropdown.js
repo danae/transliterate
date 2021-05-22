@@ -1,4 +1,4 @@
-// Create a Bootstrap dropdown from a select
+// Create a select-like component using a dropdown button
 $.fn.dropdownSelect = function(items, selectedValue, triggerChange = false)
 {
   return this.each(function() {
@@ -88,7 +88,5 @@ $.fn.dropdownSelect = function(items, selectedValue, triggerChange = false)
     // Trigger the click of the selected item
     if (selectedItem !== undefined)
       selectedItem.trigger('click');
-
-
   });
 };
